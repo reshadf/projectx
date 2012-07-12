@@ -1,0 +1,165 @@
+html 
+{ 
+	background: url(../img/blueprint.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+body
+{
+	
+}
+
+header h1
+{
+	font-size: 0.8em;
+}
+
+.container 
+{
+	position: relative;
+	margin: 0 auto;
+
+
+}
+
+.main
+{
+	border: 2px #fff solid;
+	color: #fff;
+	width: 500px;
+	height: 480px;
+	position: fixed;
+	margin-top: 0px;
+	margin-left: 100px;
+	padding: 10px;
+	background: url(../img/blueprint-blurry.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.content article
+{
+	border: 2px #fff solid;
+	width: 500px;
+	position: relative;
+	margin-top: 40px;
+	margin-left: 650px;
+	padding: 10px;
+	background: url(../img/blueprint-blurry.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.content article:nth-last-child(1)
+{
+	margin-bottom: 105px;
+}
+
+.content p
+{
+	position: relative;
+	width: 500px;
+	height: auto;
+	color: #fff;
+
+}
+
+.content h2, h3, h4, h5, h6
+{
+	color: #fff;
+}
+
+.navigation 
+{
+	float: left;
+	font: normal 0.8em "helvetica" helvetica;
+	text-transform: uppercase;
+	position: relative;
+	height: 30px;
+}
+
+.navigation li
+{	
+	
+	padding: 5px;
+	width: 150px;
+}
+
+.navigation:nth-child(1) li
+{
+}
+
+.navigation a
+{
+	color: #60a7ff;
+	text-decoration: none;	
+	-webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+}
+
+.navigation a:hover
+{
+	color: #ff1;
+}
+
+header .navigation
+{
+	position:fixed;
+	bottom:20px;
+	left:142px;
+	z-index:80;
+	width:100%;
+	line-height:6px
+}
+
+header .navigation 
+{
+	height:65px;
+	background:#000;
+	opacity:0.6;filter:alpha(opacity=60);
+	padding:7px 0 0 7px
+	bottom: 50px;
+}
+
+header #webtitle
+{
+	position: fixed;
+	left: 0;
+	bottom: 20px;
+	width: 140px;
+	z-index:80;
+	height: 65px;
+	color: #fff;
+	background-color: #000;
+	border-right:2px solid #fff;
+}
+
+header #webtitle h1
+{
+	font: normal 0.8em "helvetica" helvetica;
+	position:absolute;
+	bottom: 0;
+	right: 0;
+	padding-right: 10px;
+}
+
+header #webtitle a h1
+{
+	color: #60a7ff;
+}
+
+header #webtitle a:hover h1
+{
+
+	background-image: url('../img/go.gif');
+}
+

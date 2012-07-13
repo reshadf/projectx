@@ -1,10 +1,14 @@
 html 
 { 
-	background: url(../img/blueprint.jpg) no-repeat center center fixed; 
+	background: url(../img/beach.jpg) no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+   
+        background-color: #000;
+
+
 }
 
 body
@@ -26,7 +30,7 @@ header h1
 
 }
 
-.main
+.main article
 {
 	border: 2px #fff solid;
 	color: #fff;
@@ -34,7 +38,7 @@ header h1
 	height: 480px;
 	position: fixed;
 	padding: 10px;
-	background: url(../img/blueprint-blurry.jpg) no-repeat center center fixed;
+	background: url(../img/beach-blurry.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -49,7 +53,7 @@ header h1
 	margin-top: 40px;
 	padding: 10px;
 	margin-left: 60%;
-	background: url(../img/blueprint-blurry.jpg) no-repeat center center fixed;
+	background: url(../img/beach-blurry.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -67,7 +71,6 @@ header h1
 	width: 500px;
 	height: auto;
 	color: #fff;
-
 }
 
 .content h2, h3, h4, h5, h6
@@ -97,7 +100,7 @@ header h1
 
 .navigation a
 {
-	color: #60a7ff;
+	color: #000;
 	text-decoration: none;	
 	-webkit-transition: all 1s ease-in-out;
     -moz-transition: all 1s ease-in-out;
@@ -123,7 +126,7 @@ header .navigation
 header .navigation 
 {
 	height:65px;
-	background:#000;
+	background:#FF8800;
 	opacity:0.6;filter:alpha(opacity=60);
 	padding:7px 0 0 7px
 	bottom: 50px;
@@ -153,7 +156,7 @@ header #webtitle h1
 
 header #webtitle a h1
 {
-	color: #60a7ff;
+	color: #FF8800;
 }
 
 header #webtitle a:hover h1

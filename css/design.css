@@ -1,10 +1,10 @@
 html 
-{ 
+{ /*
 	background: url(../img/beach.jpg) no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-	background-size: cover;
+	background-size: cover; */
    
         background-color: #000;
 
@@ -38,7 +38,7 @@ header h1
 	height: 480px;
 	position: fixed;
 	padding: 10px;
-	background: url(../img/beach-blurry.jpg) no-repeat center center fixed;
+	background: url(../img/newyork.jpg) no-repeat center  fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -53,7 +53,7 @@ header h1
 	margin-top: 40px;
 	padding: 10px;
 	margin-left: 60%;
-	background: url(../img/beach-blurry.jpg) no-repeat center center fixed;
+	background: url(../img/newyork.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -70,12 +70,12 @@ header h1
 	position: relative;
 	width: 500px;
 	height: auto;
-	color: #333;
+	color: #fff;
 }
 
 .content h2, h3, h4, h5, h6
 {
-	color: #333;
+	color: #fff;
 }
 
 .navigation 
@@ -168,7 +168,7 @@ header #webtitle a:hover h1
 
 label {	
 		font-size: 20px;
-		color: #666; 
+		color: #fff; 
 }
 	
 form { 

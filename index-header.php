@@ -126,35 +126,25 @@ catch (PDOException $e)
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>
 <?php 
-if(isset($_GET['page']))
-  {
-    switch($_GET['page']){
+   
+if (file_exists("index.ini") && is_array($title = parse_ini_file("index.ini", true)))
+{
+    if (array_key_exists("title", $title))
+    {
+        foreach ($title["title"] as $basename => $title)
+        {       
+            if(isset($_GET['page']) and $_GET['page'] == $basename)
+            {
+              echo $title;
+            }
+        }
+    }
 
-                case '1':
-                print "Home | Reshad Farid Portfolio";
-                break;
-
-                case '2':
-                print "About | Reshad Farid Portfolio";
-                break;
-
-                case '3':
-                print "Portfolio | Reshad Farid Portfolio";
-                break;
-
-                case '4':
-                print "Tips and Tricks | Reshad Farid Portfolio";
-                break;
-
-                default:
-                print "Home | Reshad Farid Portfolio";
-                break;
-                }
-  }
-  else
-  {
-    echo 'Articel...';
-  }
+    else
+    {
+      echo 'Reshad Farid';
+    }
+}
 ?>
 </title>
   <meta name="description" content="">

@@ -1,0 +1,60 @@
+-- phpMyAdmin SQL Dump
+-- version 3.3.9.2
+-- http://www.phpmyadmin.net
+--
+-- Machine: localhost
+-- Genereertijd: 18 Jul 2012 om 16:36
+-- Serverversie: 5.5.9
+-- PHP-Versie: 5.3.6
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Database: `projectx`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `articles`
+--
+
+CREATE TABLE `articles` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(120) NOT NULL,
+  `content` varchar(10000) NOT NULL,
+  `description` varchar(500) NOT NULL,
+  `thumbnail` varchar(100) NOT NULL,
+  `data` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Gegevens worden uitgevoerd voor tabel `articles`
+--
+
+INSERT INTO `articles` VALUES(1, 'Dit is de titel', 'Hallo dit is een content stukje :)', 'voorbeeld block content', '', '2012-07-17 15:39:36');
+INSERT INTO `articles` VALUES(2, 'Dit is block 2', 'dit is de inhoud van block 2', 'dit is de beschrijving klik op lees verder om de inhoud te zien.', '', '2012-07-17 16:57:44');
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `members`
+--
+
+CREATE TABLE `members` (
+  `member_id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(250) NOT NULL,
+  `gender` int(1) NOT NULL,
+  `age` int(2) NOT NULL,
+  `permission` int(1) NOT NULL,
+  PRIMARY KEY (`member_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Gegevens worden uitgevoerd voor tabel `members`
+--
+
+INSERT INTO `members` VALUES(1, 'reshad', 'Playstation3', 1, 19, 1);
+INSERT INTO `members` VALUES(2, 'demo', 'demo123', 0, 20, 2);

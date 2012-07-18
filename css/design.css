@@ -1,14 +1,12 @@
 html 
-{ /*
-	background: url(../img/beach.jpg) no-repeat center center fixed; 
+{ 
+	background: url(../img/newyork.jpg) no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-	background-size: cover; */
+	background-size: cover; 
    
         background-color: #000;
-
-
 }
 
 body
@@ -131,18 +129,20 @@ header h1
 
 .navigation 
 {
-	float: left;
 	font: normal 0.8em "helvetica" helvetica;
 	text-transform: uppercase;
 	position: relative;
-	height: 30px;
+	height: 65px;
 }
 
 .navigation li
 {	
-	
+	float: left;
+	text-align: center;
+	line-height: 55px;
 	padding: 5px;
 	width: 150px;
+	border-right: 2px solid #333;
 }
 
 .navigation:nth-child(1) li
@@ -161,7 +161,7 @@ header h1
 
 .navigation a:hover
 {
-	color: #ff1;
+	color: #fff;
 }
 
 header .navigation
@@ -445,3 +445,13 @@ input:focus, textarea:focus {
   border: 1px solid rgba(255, 136, 100, 2);
 }
 
+#notfound
+{
+	color: #fff;
+}
+
+.current
+{
+	border-left: 4px solid #fff;
+	padding-left: 5px;
+}

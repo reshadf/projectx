@@ -66,7 +66,7 @@ if (file_exists("index.ini") && is_array($content = parse_ini_file("index.ini", 
    * get Content blocks
    */
 
-  try 
+try 
 {
   $db = new PDO('mysql:host=localhost;dbname=projectx', 'root', 'root');
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

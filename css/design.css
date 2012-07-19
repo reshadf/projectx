@@ -24,7 +24,7 @@ header h1
 	position: relative;
 	margin: 0 auto;
 	width: 1000px;
-
+	color: #fff;
 
 }
 
@@ -163,9 +163,10 @@ header h1
 .navigation a:hover
 {
 	color: #fff;
+	
 }
 
-header .navigation
+.navigation
 {
 	position:fixed;
 	bottom:20px;
@@ -175,7 +176,7 @@ header .navigation
 	line-height:6px
 }
 
-header .navigation 
+.navigation 
 {
 	height:65px;
 	background:#FF8800;
@@ -184,7 +185,7 @@ header .navigation
 	bottom: 50px;
 }
 
-header #webtitle
+#webtitle
 {
 	position: fixed;
 	left: 0;
@@ -193,11 +194,11 @@ header #webtitle
 	z-index:80;
 	height: 65px;
 	color: #fff;
-	background-color: #000;
+	background: url('../img/bg-logo.jpg');
 	border-right:2px solid #fff;
 }
 
-header #webtitle h1
+#webtitle h1
 {
 	font: normal 0.8em "helvetica" helvetica;
 	position:absolute;
@@ -206,15 +207,18 @@ header #webtitle h1
 	padding-right: 10px;
 }
 
-header #webtitle a h1
+#webtitle a h1
 {
 	color: #FF8800;
+	-webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
 }
 
-header #webtitle a:hover h1
+#webtitle a:hover h1
 {
-
-	background-image: url('../img/go.gif');
+	color: #fff;
 }
 
 
@@ -451,8 +455,7 @@ input:focus, textarea:focus {
 	color: #fff;
 }
 
-.current
+.navigation .current
 {
-	border-left: 4px solid #fff;
-	padding-left: 5px;
+	color: #fff;
 }

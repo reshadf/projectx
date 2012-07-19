@@ -36,7 +36,7 @@ header h1
 	height: 480px;
 	position: fixed;
 	padding: 10px;
-	background: url(../img/newyork.jpg) no-repeat center  fixed;
+	background: url(../img/newyork-blurry.jpg) no-repeat center  fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -51,7 +51,7 @@ header h1
 	margin-top: 40px;
 	padding: 10px;
 	margin-left: 60%;
-	background: url(../img/newyork.jpg) no-repeat center center fixed;
+	background: url(../img/newyork-blurry.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -93,7 +93,7 @@ header h1
 	margin-top: 40px;
 	padding: 10px;
 	min-height: 500px;
-	background: url(../img/newyork.jpg) no-repeat center center fixed;
+	background: url(../img/newyork-blurry.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -152,6 +152,7 @@ header h1
 .navigation a
 {
 	color: #000;
+	font: bold 1.2em "Helvetica", Helvetica;
 	text-decoration: none;	
 	-webkit-transition: all 1s ease-in-out;
     -moz-transition: all 1s ease-in-out;

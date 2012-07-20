@@ -152,6 +152,6 @@ if (file_exists("index.ini") && is_array($title = parse_ini_file("index.ini", tr
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/design.css">
-
+  
   <script src="js/libs/modernizr-2.5.3.min.js"></script>
 </head>

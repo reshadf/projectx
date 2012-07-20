@@ -1,78 +1,76 @@
-html 
-{ 
-	background: url(../img/newyork.jpg) no-repeat center center fixed; 
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+html {
+	background: url(../img/newyork.jpg) no-repeat center center fixed;
+
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover; 
-   
-        background-color: #000;
+	background-size: cover;
+	background-color: #000;
 }
 
-body
-{
-	
-}
-
-header h1
-{
+header h1 {
 	font-size: 0.8em;
 }
 
-.container 
-{
+.container {
 	position: relative;
 	margin: 0 auto;
 	width: 1000px;
 	color: #fff;
-
 }
 
-.main
-{
+.main {
 	border: 2px #fff solid;
 	color: #fff;
 	width: 500px;
 	height: 480px;
 	position: fixed;
 	padding: 10px;
-	background: url(../img/newyork-blurry.jpg) no-repeat center  fixed;
+	background: url(../img/newyork-blurry.jpg) no-repeat center fixed;
+
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
-	-o-background-size: cover;
 	background-size: cover;
 }
 
-.contentblock
-{
+.contentblock {
 	border: 2px #fff solid;
 	width: 500px;
+	min-height: 150px;
 	position: relative;
 	margin-top: 40px;
 	padding: 10px;
 	margin-left: 60%;
 	background: url(../img/newyork-blurry.jpg) no-repeat center center fixed;
+
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
-	-o-background-size: cover;
 	background-size: cover;
 }
 
-.contentblock:nth-last-child(1)
-{
+.contentblock:nth-last-child(1) {
 	margin-bottom: 105px;
 }
 
-.contentblock p
-{
+.contentblock p {
 	position: relative;
 	width: 500px;
 	height: auto;
 	color: #fff;
 }
 
-.contentblock time
-{
+.contentblock time {
 	color: #fff;
 	position: absolute;
 	top: 5px;
@@ -80,13 +78,11 @@ header h1
 	font: normal 0.8em "Helvetica", Helvetica;
 }
 
-.contentblock h2, h3, h4, h5, h6
-{
+.contentblock h2,h3,h4,h5,h6 {
 	color: #fff;
 }
 
-.content
-{
+.content {
 	border: 2px #fff solid;
 	width: 1000px;
 	position: relative;
@@ -94,27 +90,22 @@ header h1
 	padding: 10px;
 	min-height: 500px;
 	background: url(../img/newyork-blurry.jpg) no-repeat center center fixed;
+
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
-	-o-background-size: cover;
 	background-size: cover;
-}
 
-.content
-{
 	margin-bottom: 105px;
 }
 
-.content p
-{
+.content p {
 	position: relative;
 	width: 800px;
 	height: auto;
 	color: #fff;
 }
 
-.content time
-{
+.content time {
 	color: #fff;
 	position: absolute;
 	top: 5px;
@@ -122,21 +113,43 @@ header h1
 	font: normal 0.8em "Helvetica", Helvetica;
 }
 
-.content h2, h3, h4, h5, h6
-{
+.content h2,h3,h4,h5,h6 {
 	color: #fff;
 }
 
-.navigation 
+.portfolio {
+	border: 2px #fff solid;
+	width: 900px;
+	position: relative;
+	margin-top: 40px;
+	padding: 10px;
+	min-height: 500px;
+	background: url(../img/newyork-blurry.jpg) no-repeat center center fixed;
+
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+
+	margin-bottom: 105px;
+	margin-bottom: 105px;
+}
+
+.portfolio p
 {
-	font: normal 0.8em "helvetica" helvetica;
+	position: relative;
+	width: 800px;
+	height: auto;
+	color: #fff;
+}
+
+.navigation {
+	font: normal 13px "helvetica", helvetica;
 	text-transform: uppercase;
 	position: relative;
 	height: 65px;
 }
 
-.navigation li
-{	
+.navigation li {
 	float: left;
 	text-align: center;
 	line-height: 55px;
@@ -145,267 +158,251 @@ header h1
 	border-right: 2px solid #333;
 }
 
-.navigation:nth-child(1) li
-{
-}
-
-.navigation a
-{
+.navigation a {
 	color: #000;
 	font: bold 1.2em "Helvetica", Helvetica;
-	text-decoration: none;	
+	text-decoration: none;
+
 	-webkit-transition: all 1s ease-in-out;
-    -moz-transition: all 1s ease-in-out;
-    -o-transition: all 1s ease-in-out;
-    -ms-transition: all 1s ease-in-out;
+	-moz-transition: all 1s ease-in-out;
+	-o-transition: all 1s ease-in-out;
+	-ms-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
 }
 
-.navigation a:hover
-{
+.navigation a:hover {
 	color: #fff;
-	
 }
 
-.navigation
-{
-	position:fixed;
-	bottom:20px;
-	left:142px;
-	z-index:80;
-	width:100%;
-	line-height:6px
+.navigation {
+	position: fixed;
+	bottom: 20px;
+	left: 142px;
+	z-index: 80;
+	width: 100%;
+	line-height: 6px;
 }
 
-.navigation 
-{
-	height:65px;
-	background:#FF8800;
-	opacity:0.6;filter:alpha(opacity=60);
-	padding:7px 0 0 7px
-	bottom: 50px;
+.navigation {
+	height: 65px;
+	background: #FF8800;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+	filter: alpha(opacity=60);
+	opacity: 0.6;
+	padding: 7px 0 0 7px bottom:  50px;
 }
 
-#webtitle
-{
+#webtitle {
 	position: fixed;
 	left: 0;
 	bottom: 20px;
 	width: 140px;
-	z-index:80;
+	z-index: 80;
 	height: 65px;
 	color: #fff;
 	background: url('../img/bg-logo.jpg');
-	border-right:2px solid #fff;
+	border-right: 2px solid #fff;
 }
 
-#webtitle h1
-{
+#webtitle h1 {
 	font: normal 0.8em "helvetica" helvetica;
-	position:absolute;
-	bottom: 0;
+	position: absolute;
+	bottom: 10px;
 	right: 0;
 	padding-right: 10px;
 }
 
-#webtitle a h1
-{
+#webtitle a h1 {
 	color: #FF8800;
+
 	-webkit-transition: all 1s ease-in-out;
-    -moz-transition: all 1s ease-in-out;
-    -o-transition: all 1s ease-in-out;
-    -ms-transition: all 1s ease-in-out;
+	-moz-transition: all 1s ease-in-out;
+	-o-transition: all 1s ease-in-out;
+	-ms-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
 }
 
-#webtitle a:hover h1
-{
+#webtitle a:hover h1 {
 	color: #fff;
 }
 
-
-label {	
-		font-size: 20px;
-		color: #fff; 
+label {
+	font-size: 20px;
+	color: #fff;
 }
-	
-form { 
-	
-	
-	
-	width: 500px;
-	/* -- CSS3 - define rounded corners for the form -- */	
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px; 		
-	
-	/* -- CSS3 - create a background graident -- */
-	background: -webkit-gradient(linear, 0% 0%, 0% 40%, from(#EEE), to(#FFFFFF)); 
-	background: -moz-linear-gradient(0% 40% 90deg,#FFF, #EEE); 
-	
-	/* -- CSS3 - add a drop shadow -- */
-	-webkit-box-shadow:0px 0 50px #ccc;
-	-moz-box-shadow:0px 0 50px #ccc; 
-	box-shadow:0px 0 50px #ccc;		 		
-}	
-	
-fieldset { border: none; }
 
-#user-details { 
+form {
+	width: 500px; /* --CSS3 -define rounded corners for the form --*/
+border-radius: 10px; /* --CSS3 -create a background graident --*/
+background: -webkit-gradient(linear, 0% 0%, 0% 40%, from(#EEE), to(#FFFFFF));
+
+	background: -webkit-linear-gradient(0% 40% 90deg,#FFF, #EEE);
+	background: -moz-linear-gradient(0% 40% 90deg,#FFF, #EEE);
+	background: -o-linear-gradient(0% 40% 90deg,#FFF, #EEE);
+	background: -ms-linear-gradient(0% 40% 90deg,#FFF, #EEE);
+	background: linear-gradient(0% 40% 90deg,#FFF, #EEE); /* --CSS3 -add a drop shadow --*/
+
+-webkit-box-shadow: 0px 0 50px #ccc;
+	box-shadow: 0px 0 50px #ccc;
+}
+
+fieldset {
+	border: none;
+}
+
+#user-details {
 	float: left;
-	width: 230px; 
+	width: 230px;
 }
 
-#user-message { 
+#user-message {
 	float: left;
 	width: 405px;
 }
-	
-input, textarea { 		
-	padding: 8px; 
-	margin: 4px 0 20px 0; 
-	background: #fff; 
-	width: 220px; 
-	font-size: 14px; 
-	color: #555; 
-	border: 1px #ddd solid;
-	
-	/* -- CSS3 Shadow - create a shadow around each input element -- */ 
-	-webkit-box-shadow: 0px 0px 4px #aaa;
-	-moz-box-shadow: 0px 0px 4px #aaa; 
-	box-shadow: 0px 0px 4px #aaa;
-	
-	/* -- CSS3 Transition - define what the transition will be applied to (i.e. the background) -- */		
-	-webkit-transition: background 0.3s linear;							
-}
-	
-textarea {		
-	width: 390px; 
-	height: 175px; 		 		
+
+input,textarea {
+	padding: 8px;
+	margin: 4px 0 20px 0;
+	background: #fff;
+	width: 220px;
+	font-size: 14px;
+	color: #555;
+	border: 1px #ddd solid; /* --CSS3 Shadow -create a shadow around each input element --*/
+
+-webkit-box-shadow: 0px 0px 4px #aaa;
+	box-shadow: 0px 0px 4px #aaa; /* --CSS3 Transition -define what the transition will be applied to (i.e. the background) --*/
+
+-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
 }
 
-input:hover, textarea:hover, .read-more { 
-	background: #eee; 
+textarea {
+	width: 390px;
+	height: 175px;
 }
-		
-input.submit { 	
-	width: 150px; 
-	color: #eee; 
-	text-transform: uppercase; 
+
+input:hover,textarea:hover,.read-more {
+	background: #eee;
+}
+
+input.submit {
+	width: 150px;
+	color: #eee;
+	text-transform: uppercase;
 	margin-top: 10px;
 	background-color: #FF8800;
-	border: none;
-	
-	/* -- CSS3 Transition - define which property to animate (i.e. the shadow)  -- */
-	-webkit-transition: -webkit-box-shadow 0.3s linear;
-	
-	/* -- CSS3 - Rounded Corners -- */
-	-moz-border-radius: 4px; 
-	-webkit-border-radius: 4px;
-	border-radius: 4px; 
-					
-	/* -- CSS3 Shadow - create a shadow around each input element -- */ 
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FF8800), to(#FC9F35)); 
-	background: -moz-linear-gradient(25% 75% 90deg,#FF8800, #FC9F35);		
-} 
-	
-input.submit:hover { 		
-	-webkit-box-shadow: 0px 0px 20px #555;
-	-moz-box-shadow: 0px 0px 20px #aaa; 
-	box-shadow: 0px 0px 20px #555;	
-	cursor:  pointer; 
+	border: none; /* --CSS3 Transition -define which property to animate (i.e. the shadow)  --*/
+
+-webkit-transition: -webkit-box-shadow 0.3s linear;
+	-moz-transition: -moz-box-shadow 0.3s linear;
+	-o-transition: box-shadow 0.3s linear;
+	-ms-transition: box-shadow 0.3s linear;
+	transition: box-shadow 0.3s linear; /* --CSS3 -Rounded Corners --*/
+border-radius: 4px; /* --CSS3 Shadow -create a shadow around each input element --*/
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FF8800), to(#FC9F35));
+
+	background: -webkit-linear-gradient(25% 75% 90deg,#FF8800, #FC9F35);
+	background: -moz-linear-gradient(25% 75% 90deg,#FF8800, #FC9F35);
+	background: -o-linear-gradient(25% 75% 90deg,#FF8800, #FC9F35);
+	background: -ms-linear-gradient(25% 75% 90deg,#FF8800, #FC9F35);
+	background: linear-gradient(25% 75% 90deg,#FF8800, #FC9F35);
 }
 
-.read-more
-{
+input.submit:hover {
+	-webkit-box-shadow: 0px 0px 20px #555;
+	box-shadow: 0px 0px 20px #555;
+	cursor: pointer;
+}
+
+.read-more {
 	margin-top: 5px;
 	padding: 5px 10px 5px 10px;
 	color: #eee;
-	position: relative;
-	
+	position: absolute;
+	left: 115px;
+	bottom: 10px;
 	width: 100px;
 	background-color: #FF8800;
 	text-align: center;
 	text-decoration: none;
-	-moz-border-radius: 4px; 
-	-webkit-border-radius: 4px;
-	border-radius: 4px; 
+	border-radius: 4px;
+
 	-webkit-transition: all 1s ease-in-out;
-    -moz-transition: all 1s ease-in-out;
-    -o-transition: all 1s ease-in-out;
-    -ms-transition: all 1s ease-in-out;
-
+	-moz-transition: all 1s ease-in-out;
+	-o-transition: all 1s ease-in-out;
+	-ms-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
 }
 
-.read-more:visited
-{
+.read-more:visited {
 	color: #eee;
-	cursor:  pointer; 
+	cursor: pointer;
 }
 
-.read-more:hover
-{
+.read-more:hover {
 	background-color: #eee;
 	color: #FF8800;
 }
 
-.read-less
-{
+.read-less {
 	margin-top: 5px;
 	padding: 5px 10px 5px 10px;
 	color: #eee;
 	position: absolute;
 	top: 20px;
 	right: 14px;
-	
 	width: 100px;
 	background-color: #FF8800;
 	text-align: center;
 	text-decoration: none;
-	-moz-border-radius: 4px; 
-	-webkit-border-radius: 4px;
-	border-radius: 4px; 
+	border-radius: 4px;
+
 	-webkit-transition: all 1s ease-in-out;
-    -moz-transition: all 1s ease-in-out;
-    -o-transition: all 1s ease-in-out;
-    -ms-transition: all 1s ease-in-out;
-
+	-moz-transition: all 1s ease-in-out;
+	-o-transition: all 1s ease-in-out;
+	-ms-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
 }
 
-.read-less:visited
-{
+.read-less:visited {
 	color: #eee;
-	cursor:  pointer; 
+	cursor: pointer;
 }
 
-.read-less:hover
-{
+.read-less:hover {
 	background-color: #eee;
 	color: #FF8800;
 }
 
-figure img{
-width: 100px;
-height: 100px;
+figure img {
+	width: 100px;
+	height: 100px;
 }
 
 /* Post thumbnail and images */
-figure { 
+figure {
 	background: #f4f4f4;
 	border: 2px solid #cecdcd;
 	border-radius: 3px 5px 5px 5px;
 	float: left;
 	padding: 10px;
 	text-align: center;
+
 	-webkit-transition: border 200ms ease;
-	/*-moz-transition: border 200ms ease;*/
-	transition: border 200ms ease;
+	-moz-transition: border 200ms ease;
+	-o-transition: border 200ms ease;
+	-ms-transition: border 200ms ease;
+	transition: border 200ms ease; /**/
 }
 
 figure:hover {
 	border: 2px solid #FF8800;
 }
 
-figure,
-figure.alignleft  {
+figure,figure.alignleft {
 	margin: 0 20px 20px 0;
 }
 
@@ -414,7 +411,7 @@ figure.alignright {
 }
 
 figure {
-	margin-left: -40px;	
+	margin-left: -40px;
 }
 
 figcaption {
@@ -427,35 +424,61 @@ figcaption {
 
 /* Thumbnail rotation */
 /*.thumbnail,
-.post:nth-of-type(2n) .thumbnail:hover {
-	-webkit-transform: rotate(0.45deg); 
-	-moz-transform: rotate(0.45deg); 
-	transform: rotate(0.45deg); 
+.post:nth-of-type(2n) .thumbnail:hover  {
+	
+
+-webkit-transform:  rotate(0.45deg);
+	
+-moz-transform:  rotate(0.45deg);
+	
+-o-transform:  rotate(0.45deg);
+	
+-ms-transform:  rotate(0.45deg);
+	
+transform:  rotate(0.45deg);
+	
+
+
 }
 
-.thumbnail:hover,
-.post:nth-of-type(2n) .thumbnail {
-	-webkit-transform: rotate(-0.45deg);
-	-moz-transform: rotate(-0.45deg);
-	transform: rotate(-0.45deg);
-}*/
+.thumbnail: hover,
+.post:nth-of-type(2n) .thumbnail  {
+	
 
- input, textarea {
-  @include transition(all 0.30s ease-in-out);
-  border: 1px solid #FF8800;
-}
- 
-input:focus, textarea:focus {
-  @include box-shadow(0 0 5px rgba(227, 0, 91, 1));
-  border: 1px solid rgba(255, 136, 100, 2);
+-webkit-transform:  rotate(-0.45deg);
+	
+-moz-transform:  rotate(-0.45deg);
+	
+-o-transform:  rotate(-0.45deg);
+	
+-ms-transform:  rotate(-0.45deg);
+	
+transform:  rotate(-0.45deg);
+	
+
+
 }
 
-#notfound
-{
+*/
+input,textarea {
+	@include transition(all 0.30s ease-in-out);
+	 border: 1px solid #FF8800;
+}
+
+input:focus,textarea:focus {
+	@include box-shadow(0 0 5px rgba(227, 0, 91, 1));
+	 border: 1px solid rgba(255, 136, 100, 2);
+}
+
+#notfound {
 	color: #fff;
 }
 
-.navigation .current
-{
+.navigation .current {
 	color: #fff;
 }
+
+/*===================
+Portfolio css
+====================*/
+

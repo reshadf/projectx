@@ -24,12 +24,12 @@ class CookieStorage implements StorageInterface
      */
     public function set(Cookie $cookie) {
         return setcookie(   
-                            $this->getName(),
-                            $this->getValue(),
-                            $this->getTime(), 
-                            $this->getPath(), 
-                            $this->getDomain(), 
-                            $this->getSecure(), true 
+                            $cookie->getName(),
+                            $cookie->getValue(),
+                            $cookie->getTime(), 
+                            $cookie->getPath(), 
+                            $cookie->getDomain(), 
+                            $cookie->getSecure(), true 
                         );
     }
 
@@ -37,7 +37,7 @@ class CookieStorage implements StorageInterface
      * Get cookie.
      */
     public function get(Cookie $cookie) {
-        return $_COOKIE[$this->getName()];
+        return $_COOKIE[$cookie->getName()];
 
     }
 
@@ -45,13 +45,13 @@ class CookieStorage implements StorageInterface
      * Update cookie.
      */
     public function update(Cookie $cookie) {
-        return $this->update();
+        return $cookie->update();
     }
 
 
     public function delete(Cookie $cookie) {
         
-        return $this->delete();
+        return $cookie->delete();
     }
 }
 

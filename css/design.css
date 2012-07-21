@@ -478,6 +478,18 @@ input:focus,textarea:focus {
 	color: #fff;
 }
 
+@-moz-document url-prefix() { 
+  .selector {
+     color:lime;
+  }
+
+  .navigation
+  {
+  	font-size: 0.85em;
+  }
+}
+
+
 /*===================
 Portfolio css
 ====================*/

@@ -154,4 +154,32 @@ if (file_exists("index.ini") && is_array($title = parse_ini_file("index.ini", tr
   <link rel="stylesheet" href="css/design.css">
   
   <script src="js/libs/modernizr-2.5.3.min.js"></script>
+
+    <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+<link rel="stylesheet" type="text/css" href="css/cookiebar.css"/>
+<script type="text/javascript" src="http://assets.cookieconsent.silktide.com/1.0.8/plugin.min.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+cc.initialise({
+  cookies: {
+    analytics: {}
+  },
+  settings: {
+    consenttype: "implicit",
+    bannerPosition: "top",
+    tagPosition: "vertical-left",
+    hideprivacysettingstab: true,
+    refreshOnConsent: true,
+    disableallsites: true
+  },
+  strings: {
+    analyticsDefaultDescription: 'We maken gebruik van cookies om u en andere gebruikers een betere gebruikerservaring te geven.',
+    advertisingDefaultDescription: 'We maken gebruik van cookies om u en andere gebruikers een betere gebruikerservaring te geven.'
+  }
+});
+// ]]>
+</script>
+<!-- End Cookie Consent plugin -->
+
+
 </head>

@@ -16,29 +16,14 @@ if(!isset($_GET['id']))
             $mailErrors[] = 'vul uw naam in s.v.p';
           }
 
-          else
-          {
-            $enaam = $_SESSION['name'];
-          }
-
           if(!isset($_POST['email']) || trim($_POST['email']) == '')
           {
             $mailErrors[] = 'vul een email in s.v.p';
           }
 
-          else
-          {
-            $eemail = $_SESSION['email'];
-          }
-
           if(!isset($_POST['message']) || trim($_POST['message']) == '')
           {
             $mailErrors[] = 'vul een bericht in s.v.p';
-          }
-
-          else
-          {
-            $eebericht = $_SESSION['message'];
           }
 
           $mailerr = '';

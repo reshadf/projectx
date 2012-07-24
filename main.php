@@ -44,7 +44,7 @@ if(!isset($_GET['id']))
           {
             $website_naam = 'reshadfarid.nl';
             // Jouw eigen geldige emailadres
-            $eigen_emailadres = 'info@reshadfarid.nl';
+            $eigen_emailadres = 'reshadfar@gmail.com';
             // Een geldig emailadres voor errors
             $error_emailadres = 'reshadfar@gmail.com';
             // De naam van de verzender

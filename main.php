@@ -11,6 +11,8 @@ if(!isset($_GET['id']))
       if($_SERVER['REQUEST_METHOD'] == 'POST')
       {
 
+        $_SESSION['post'] = $_POST;
+
           if(!isset($_POST['name']) || trim($_POST['name']) == '')
           {
             $mailErrors[] = 'vul uw naam in s.v.p';
@@ -29,8 +31,6 @@ if(!isset($_GET['id']))
           $mailerr = '';
           if( count($mailErrors) > 0 )
              {
-
-              $_SESSION['post'] = $_POST; // $_SESSION['post']['value']
 
                 $err = '';
                 $err .= '<section class="main"><br>';
@@ -91,17 +91,17 @@ if(!isset($_GET['id']))
                                   <fieldset id="user-details">  
                                     
                                     <label for="name">Naam:</label>
-                                    <input type="text" name="name" value="<?php if(isset($_SESSION['post'])){echo $_SESSION['post']['name'];} ?>" placeholder="Vul uw naam in" required> 
+                                    <input type="text" name="name" value="<?php if(isset($_SESSION['post'])){echo $_SESSION['post']['name'];} ?>" placeholder="Vul uw naam in" > 
                                   
                                     <label for="email">Email:</label> 
-                                    <input type="email" name="email" value="<?php if(isset($_SESSION['post'])){echo $_SESSION['post']['email'];} ?>"  placeholder="Vul uw email adress in" required valid/> 
+                                    <input type="email" name="email" value="<?php if(isset($_SESSION['post'])){echo $_SESSION['post']['email'];} ?>"  placeholder="Vul uw email adress in"  /> 
                                   
                                   </fieldset>
                                   
                                   <fieldset id="user-message">
                                   
                                     <label for="message">Uw bericht:</label> 
-                                    <textarea name="message" value="<?php if(isset($_SESSION['post'])){echo $_SESSION['post']['message'];} ?>" type="text" value="" rows="0" cols="0" placeholder="Vul hier uw bericht in" required ></textarea> 
+                                    <textarea name="message" type="text" value="" rows="0" cols="0" placeholder="Vul hier uw bericht in"  ><?php if(isset($_SESSION['post'])){echo $_SESSION['post']['message'];} session_destroy(); ?></textarea> 
                                   
                                     <input type="submit" value="Verzenden" name="submit" class="submit" />   
                                   

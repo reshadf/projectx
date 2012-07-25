@@ -68,7 +68,7 @@ if (file_exists("index.ini") && is_array($content = parse_ini_file("index.ini", 
 
 try 
 {
-  $db = new PDO('mysql:host=localhost;dbname=projectx', 'root', 'root');
+  $db = new PDO('mysql:85.17.24.74=localhost;dbname=projectx', 'reshad', 'Playstation3');
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $stmt = $db->prepare('  SELECT 

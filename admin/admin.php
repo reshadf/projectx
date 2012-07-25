@@ -10,7 +10,7 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
 
  	try 
 	{
-	  $dbSet = new PDO('mysql:host=localhost;dbname=projectx', 'root', 'root');
+	  $dbSet = new PDO('mysql:85.17.24.74=localhost;dbname=projectx', 'reshad', 'Playstation3');
 	  $dbSet->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 	    $stmt = $dbSet->prepare('  SELECT 

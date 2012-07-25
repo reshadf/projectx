@@ -1,6 +1,6 @@
 <?php
 session_start();
-ini_set('display_errors', 1); // 0 = uit, 1 = aan
+ini_set('display_errors', 0); // 0 = uit, 1 = aan
 error_reporting(E_ALL);
 
 /*

@@ -29,6 +29,9 @@ if(!isset($_GET['id']))
           $mailerr = '';
           if( count($mailErrors) > 0 )
              {
+
+              $_SESSION['post'] = $_POST; // $_SESSION['post']['value']
+
                 $err = '';
                 $err .= '<section class="main"><br>';
                 foreach ($mailErrors as $error) {
@@ -88,17 +91,17 @@ if(!isset($_GET['id']))
                                   <fieldset id="user-details">  
                                     
                                     <label for="name">Naam:</label>
-                                    <input type="text" name="name" value="" placeholder="Vul uw naam in" required> 
+                                    <input type="text" name="name" value="<?php if(isset($_SESSION['post'])){echo $_SESSION['post']['name'];} ?>" placeholder="Vul uw naam in" required> 
                                   
                                     <label for="email">Email:</label> 
-                                    <input type="email" name="email" value=""  placeholder="Vul uw email adress in" required valid/> 
+                                    <input type="email" name="email" value="<?php if(isset($_SESSION['post'])){echo $_SESSION['post']['email'];} ?>"  placeholder="Vul uw email adress in" required valid/> 
                                   
                                   </fieldset>
                                   
                                   <fieldset id="user-message">
                                   
                                     <label for="message">Uw bericht:</label> 
-                                    <textarea name="message" type="text" value="" rows="0" cols="0" placeholder="Vul hier uw bericht in" required></textarea> 
+                                    <textarea name="message" value="<?php if(isset($_SESSION['post'])){echo $_SESSION['post']['message'];} ?>" type="text" value="" rows="0" cols="0" placeholder="Vul hier uw bericht in" required ></textarea> 
                                   
                                     <input type="submit" value="Verzenden" name="submit" class="submit" />   
                                   
@@ -118,7 +121,7 @@ else
 
 try 
 {
-  $dbContent = new PDO('mysql:85.17.24.74=localhost;dbname=projectx', 'reshad', 'Playstation3');
+  $dbContent = new PDO('mysql:host=localhost;dbname=projectx', 'root', 'root');
   $dbContent->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $stmtContent = $dbContent->prepare('  SELECT 

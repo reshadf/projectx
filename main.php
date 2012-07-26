@@ -23,6 +23,11 @@ if(!isset($_GET['id']))
             $mailErrors[] = 'vul een email in s.v.p';
           }
 
+          if(filter_var($_POST['email'],FILTER_VALIDATE_EMAIL) === false)
+          {
+             $mailErrors[] = 'Email is niet geldig';
+          }
+
           if(!isset($_POST['message']) || trim($_POST['message']) == '')
           {
             $mailErrors[] = 'vul een bericht in s.v.p';
@@ -81,6 +86,8 @@ if(!isset($_GET['id']))
             $succeed .= '</section>';
 
             echo $succeed;
+
+            session_destroy();
           }
       }
       else
@@ -101,7 +108,7 @@ if(!isset($_GET['id']))
                                   <fieldset id="user-message">
                                   
                                     <label for="message">Uw bericht:</label> 
-                                    <textarea name="message" type="text" value="" rows="0" cols="0" placeholder="Vul hier uw bericht in"  ><?php if(isset($_SESSION['post'])){echo $_SESSION['post']['message'];} session_destroy(); ?></textarea> 
+                                    <textarea name="message" type="text" value="" rows="0" cols="0" placeholder="Vul hier uw bericht in"><?php if(isset($_SESSION['post'])){echo $_SESSION['post']['message'];} session_destroy(); ?></textarea> 
                                   
                                     <input type="submit" value="Verzenden" name="submit" class="submit" />   
                                   

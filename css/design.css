@@ -52,6 +52,7 @@ header h1 {
 	position: relative;
 	padding: 10px;
 	margin-left: 60%;
+	margin-top: 20px;
 	background: url(../img/newyork-blurry.jpg) no-repeat center center fixed;
 
 	-webkit-background-size: cover;

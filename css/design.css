@@ -28,6 +28,7 @@ header h1 {
 	margin: 0 auto;
 	width: 1000px;
 	color: #fff;
+	margin-top: 20px;
 }
 
 .main {
@@ -49,7 +50,6 @@ header h1 {
 	width: 500px;
 	min-height: 150px;
 	position: relative;
-	margin-top: 40px;
 	padding: 10px;
 	margin-left: 60%;
 	background: url(../img/newyork-blurry.jpg) no-repeat center center fixed;

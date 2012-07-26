@@ -129,7 +129,7 @@ try
                                           FROM  
                                               articles
                                           WHERE 
-                                              id = '.mysql_real_escape_string($_GET['id']).'
+                                              id = '.(int)($_GET['id']).'
                                       ');
 
     $stmtContent->execute();

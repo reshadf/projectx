@@ -121,7 +121,7 @@ else
 
 try 
 {
-  $dbContent = new PDO('mysql:85.17.24.74=localhost;dbname=projectx', 'reshad', 'Playstation3');
+  $dbContent = new PDO('mysql:=85.17.24.74;dbname=projectx', 'reshad', 'Playstation3');
   $dbContent->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $stmtContent = $dbContent->prepare('  SELECT 
@@ -129,7 +129,7 @@ try
                                           FROM  
                                               articles
                                           WHERE 
-                                              id = '.mysql_real_escape_string($_GET['id']).'
+                                              id = '.(int)($_GET['id']).'
                                       ');
 
     $stmtContent->execute();

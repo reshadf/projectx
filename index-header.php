@@ -7,36 +7,14 @@ session_start();
 /*
  * Error reportin 1 is aan 0 is uit
  */
-ini_set('display_errors', 1); // 0 = uit, 1 = aan
+ini_set('display_errors', 0); // 0 = uit, 1 = aan
 error_reporting(E_ALL | E_STRICT);
 
 /*
  * AutoLoader 
  */ 
 
-function __autoload($className) 
-  {
-    // haal de base dir op.
-      $base = dirname(__FILE__);
-      
-      // het pad ophalen
-      $path = $className;
 
-      // alle paden samenvoegen tot waar ik zijn moet en de phpfile eraan plakken.
-      $file = $base . "/lib/" . $path . '.php';       
-      
-      
-      // als file bestaat haal op anders error
-      if (file_exists($file)) 
-      {
-          require $file;      
-      }
-      else 
-      {
-          error_log('Class "' . $className . '" could not be autoloaded');
-          throw new Exception('Class "' . $className . '" could not be autoloaded from: ' . $file); 
-      }
-  }
 
 /*
  *  Menu block
@@ -68,7 +46,7 @@ if (file_exists("index.ini") && is_array($content = parse_ini_file("index.ini", 
 
 try 
 {
-  $db = new PDO('mysql:85.17.24.74=localhost;dbname=projectx', 'reshad', 'Playstation3');
+  $db = new PDO('mysql:=85.17.24.74;dbname=projectx', 'reshad', 'Playstation3');
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $stmt = $db->prepare('  SELECT 

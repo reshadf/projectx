@@ -23,7 +23,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 body {
 	line-height: 1;
 	color: black;
-	background: white;
+	background: #fff;
 }
 ol, ul {
 	list-style: none;
@@ -43,12 +43,6 @@ q:before, q:after {
 }
 blockquote, q {
 	quotes: "" "";
-}
-
-html, body {
-	
-	background: #fff;	
-	height : 100%;
 }
 
 .container {
@@ -133,6 +127,7 @@ aside
 {
 	margin: 0 30px 0 260px;
 	padding: 40px 0 0 0;
+	color: #000;
 }
 
 .bodywrapper
@@ -158,4 +153,18 @@ aside
 .managers a:hover
 {
 	
+}
+
+li input {
+	background-color: #fff;
+	border: none;
+}
+
+li input:hover {
+	text-decoration: underline;
+}
+
+.block input
+{
+	display: block;
 }

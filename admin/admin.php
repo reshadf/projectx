@@ -1,5 +1,7 @@
 <?php  
 session_start();
+ini_set('display_errors', 1); // 0 = uit, 1 = aan
+error_reporting(E_ALL | E_STRICT);
 if(isset($_SESSION['username'])) {
 
 $username = $_SESSION['username'];
@@ -37,9 +39,9 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
 			      {
 			      	$formUpdate .= '<form method="post" class="block">';
 			        $formUpdate .= '<label>Member:</label> 16121992' . $row['member_id'] . '<br><br>';
-			        $formUpdate .= '<label>Name:</label> <input type="text" value="' . $row['username'] . '"><br>';
-			        $formUpdate .= '<label>Password:</label> <input type="password" value=""<br><br>';
-			        $formUpdate .= '<label>Re-Typ Password:</label> <input type="password" value=""<br><br>';
+			        $formUpdate .= '<label>Name:</label> <input type="text" name="name" value="' . $row['username'] . '"><br>';
+			        $formUpdate .= '<label>Password:</label> <input name="pass" type="password" value=""<br><br>';
+			        $formUpdate .= '<label>Re-Typ Password:</label> <input name="repassword" type="password" value=""<br><br>';
 			        $formUpdate .= '<input type="submit" name="change" value="change settings">';
 			        $formUpdate .= '</form>';
 			        
@@ -57,42 +59,57 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
 	}
 
 	if(isset($_POST['change']))
-	{
-		try 
+	{	
+		if(!$_POST['pass'] || trim($_POST['pass'] == '') || !$_POST['pass'] || trim($_POST['pass'] == '') )
 		{
-		  $dbChange = new PDO('mysql:host=localhost;dbname=projectx', 'root', 'root');
-		  $dbChange->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-		    $stmtUpdateIt = $dbUpdate->prepare('  UPDATE 
-		                                 members
-		                            SET  
-		                                username = , password = 
-
-		                        	WHERE 
-		                        		username = :username
-		                        ');
-
-		    $stmtUpdateIt->bindParam(':username', $username, PDO::PARAM_STR);
-
-		    $stmtUpdateIt->execute();
-		    
-		    
-		    if($stmtUpdateIt === false)
-		    {
-		      $updateMsg = 'error 01';
-		    }
-		    else
-		    {
-		    	$updateMsg = 'instellingen gewijzigd!'; 
-		    }
-		    
-		} 
-		catch (PDOException $e) 
-		{
-		  $formUpdate = "Error:" . $e;
+			$updateMsg = 'vul alle velden in';
 		}
+		else
+		{
+			if($_POST['pass'] === ($_POST['repassword']))
+			{
+				try 
+				{
+				  $dbChange = new PDO('mysql:host=localhost;dbname=projectx', 'root', 'root');
+				  $dbChange->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-		  $dbUpdate = NULL;
+				    $stmtUpdateIt = $dbChange->prepare('  UPDATE 
+								                                members
+								                            SET  
+								                                password = :password
+
+								                        	WHERE 
+								                        		username = :name
+								                        ');
+
+				    $stmtUpdateIt->bindParam(':name', $username, PDO::PARAM_STR);
+				    $stmtUpdateIt->bindParam(':password', $_POST['pass'], PDO::PARAM_STR);
+
+				    $stmtUpdateIt->execute();
+				    
+				    
+				    if($stmtUpdateIt === false)
+				    {
+				      $updateMsg = 'error 01';
+				    }
+				    else
+				    {
+				    	$updateMsg = 'instellingen gewijzigd!'; 
+				    }
+				    
+				} 
+				catch (PDOException $e) 
+				{
+				  $formUpdate = "Error:" . $e;
+				}
+
+				  $dbUpdate = NULL;
+			}
+			else
+			{
+				$updateMsg = 'wachtwoord niet hetzelfde';
+			}
+		}
 	}
 
 } // end request method post
@@ -205,6 +222,11 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
   			if(isset($formUpdate))
   			{
   				echo $formUpdate;
+  			}
+
+  			if(isset($updateMsg))
+  			{
+  				echo $updateMsg;
   			}
   		?>
   </section>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-ini_set('display_errors', 0); // 0 = uit, 1 = aan
+ini_set('display_errors', 1); // 0 = uit, 1 = aan
 error_reporting(E_ALL);
 
 /*
@@ -41,7 +41,7 @@ function __autoload($className)
 
   	try 
 	{
-	  $db = new PDO('mysql:=85.17.24.74;dbname=projectx', 'reshad', 'Playstation3');
+	  $db = new PDO('mysql:host=localhost;dbname=projectx', 'root', 'root');
 	  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 	    $stmt = $db->prepare('  SELECT 
@@ -106,7 +106,7 @@ function __autoload($className)
  <body>
 <?php
 
-	$loginForm = new FormHandler();
+	$loginForm = new formhandler();
 
 	$loginForm->textField("Naam", "username", FH_STRING);
 	$loginForm->passField("Wachtwoord", "password", FH_PASSWORD);

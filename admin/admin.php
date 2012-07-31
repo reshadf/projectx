@@ -1,16 +1,122 @@
 <?php  
 session_start();
+ini_set('display_errors', 1); // 0 = uit, 1 = aan
+error_reporting(E_ALL | E_STRICT);
 if(isset($_SESSION['username'])) {
 
 $username = $_SESSION['username'];
 
 if($_SERVER['REQUEST_METHOD']== 'POST'){
 	
-}
+	if(isset($_POST['personal']))
+	{
+		try 
+		{
+		  $dbUpdate = new PDO('mysql:host=localhost;dbname=projectx', 'root', 'root');
+		  $dbUpdate->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+		    $stmtUpdate = $dbUpdate->prepare('  SELECT 
+		                                member_id, username, password, gender, age, permission
+		                            FROM  
+		                                members
+		                        	WHERE 
+		                        		username = :username
+		                        ');
+
+		    $stmtUpdate->bindParam(':username', $username, PDO::PARAM_STR);
+
+		    $stmtUpdate->execute();
+		    
+		    $formUpdate = '';
+		    if($stmtUpdate === false)
+		    {
+		      $formUpdate = 'error 01';
+		    }
+		    else
+		    {
+
+		       while($row = $stmtUpdate->fetch(PDO::FETCH_ASSOC))
+			      {
+			      	$formUpdate .= '<form method="post" class="block">';
+			        $formUpdate .= '<label>Member:</label> 16121992' . $row['member_id'] . '<br><br>';
+			        $formUpdate .= '<label>Name:</label> <input type="text" name="name" value="' . $row['username'] . '"><br>';
+			        $formUpdate .= '<label>Password:</label> <input name="pass" type="password" value=""<br><br>';
+			        $formUpdate .= '<label>Re-Typ Password:</label> <input name="repassword" type="password" value=""<br><br>';
+			        $formUpdate .= '<input type="submit" name="change" value="change settings">';
+			        $formUpdate .= '</form>';
+			        
+			      }
+
+		    }
+		    
+		} 
+		catch (PDOException $e) 
+		{
+		  $formUpdate = "Error:" . $e;
+		}
+
+		  $dbUpdate = NULL;
+	}
+
+	if(isset($_POST['change']))
+	{	
+		if(!$_POST['pass'] || trim($_POST['pass'] == '') || !$_POST['pass'] || trim($_POST['pass'] == '') )
+		{
+			$updateMsg = 'vul alle velden in';
+		}
+		else
+		{
+			if($_POST['pass'] === ($_POST['repassword']))
+			{
+				try 
+				{
+				  $dbChange = new PDO('mysql:host=localhost;dbname=projectx', 'root', 'root');
+				  $dbChange->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+				    $stmtUpdateIt = $dbChange->prepare('  UPDATE 
+								                                members
+								                            SET  
+								                                password = :password
+
+								                        	WHERE 
+								                        		username = :name
+								                        ');
+
+				    $stmtUpdateIt->bindParam(':name', $username, PDO::PARAM_STR);
+				    $stmtUpdateIt->bindParam(':password', $_POST['pass'], PDO::PARAM_STR);
+
+				    $stmtUpdateIt->execute();
+				    
+				    
+				    if($stmtUpdateIt === false)
+				    {
+				      $updateMsg = 'error 01';
+				    }
+				    else
+				    {
+				    	$updateMsg = 'instellingen gewijzigd!'; 
+				    }
+				    
+				} 
+				catch (PDOException $e) 
+				{
+				  $formUpdate = "Error:" . $e;
+				}
+
+				  $dbUpdate = NULL;
+			}
+			else
+			{
+				$updateMsg = 'wachtwoord niet hetzelfde';
+			}
+		}
+	}
+
+} // end request method post
 
  	try 
 	{
-	  $dbSet = new PDO('mysql:85.17.24.74=localhost;dbname=projectx', 'reshad', 'Playstation3');
+	  $dbSet = new PDO('mysql:host=localhost;dbname=projectx', 'root', 'root');
 	  $dbSet->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 	    $stmt = $dbSet->prepare('  SELECT 
@@ -103,14 +209,26 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
  	<h3>Configuration</h3>
  	<hr>
  	<section class="managers">
-	 	<ul>
-	 		<li><a href="#">Manage articles</a></li>
-	 		<li><a href="#">Personal settings</a></li>
-	 	</ul>
+ 		<form method="post">
+		 	<ul>
+		 		<li><input type="submit" name="articles" value="Manage articles"></li>
+		 		<li><input type="submit" name="personal" value="Personal"></li>
+		 	</ul>
+	 	</form>
  	</section>
   </aside>
   <section class="main" >
-  	
+  		<?php
+  			if(isset($formUpdate))
+  			{
+  				echo $formUpdate;
+  			}
+
+  			if(isset($updateMsg))
+  			{
+  				echo $updateMsg;
+  			}
+  		?>
   </section>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>

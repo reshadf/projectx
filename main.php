@@ -126,59 +126,59 @@ if(!isset($_GET['id']))
 else
 {
 
-try 
-{
-  $dbContent = new PDO('mysql:=85.17.24.74;dbname=projectx', 'reshad', 'Playstation3');
-  $dbContent->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  try 
+  {
+    $dbContent = new PDO('mysql:=85.17.24.74;dbname=projectx', 'reshad', 'Playstation3');
+    $dbContent->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $stmtContent = $dbContent->prepare('  SELECT 
-                                              id, title, content, description, thumbnail, data
-                                          FROM  
-                                              articles
-                                          WHERE 
-                                              id = '.(int)($_GET['id']).'
-                                      ');
+      $stmtContent = $dbContent->prepare('  SELECT 
+                                                id, title, content, description, thumbnail, data
+                                            FROM  
+                                                articles
+                                            WHERE 
+                                                id = '.(int)($_GET['id']).'
+                                        ');
 
-    $stmtContent->execute();
-    
+      $stmtContent->execute();
+      
 
-    if($stmtContent === false)
-    {
-      $msg = 'error 03';
-    }
-    else
-    {
-      $msg = '';
-      $row = $stmtContent->fetchAll(PDO::FETCH_ASSOC);
+      if($stmtContent === false)
       {
-
-        foreach($row as $rows => $key)
+        $msg = 'error 03';
+      }
+      else
+      {
+        $msg = '';
+        $row = $stmtContent->fetchAll(PDO::FETCH_ASSOC);
         {
-          $msg .= '<article class="content">';
-          $msg .= '<figure> <a href="#"><img src="img/nofoto.gif" alt="Post thumbnail" class="thumbnail alignleft" /></a> </figure>';
-          $msg .=  '<h2>' . $key['title'] . '</h2><time datetime=' . $key['data'] . '>' . $key['data'] . '</time>' ;
-          $msg .= '<p>' . $key['content'] . '</p>';
-          $msg .= '<a class="read-less" href="index.php">Terug</a>';
-          $msg .= '</article>';
-          $msg = preg_replace("#(^|[ \n\r\t])www.([a-z\-0-9]+).([a-z]{2,4})($|[ \n\r\t])#mi", "\\1<a href=\"http://www.\\2.\\3\" target=\"_blank\">www.\\2.\\3</a>\\4", $msg);
-          $msg = preg_replace("#(^|[ \n\r\t])(((ftp://)|(http://)|(https://))([a-z0-9\-\.,\?!%\*_\#:;~\\&$@\/=\+]+))#mi", "\\1<a href=\"\\2\" target=\"_blank\">\\2</a>", $msg); 
 
+          foreach($row as $rows => $key)
+          {
+            $msg .= '<article class="content">';
+            $msg .= '<figure> <a href="#"><img src="img/nofoto.gif" alt="Post thumbnail" class="thumbnail alignleft" /></a> </figure>';
+            $msg .=  '<h2>' . $key['title'] . '</h2><time datetime=' . $key['data'] . '>' . $key['data'] . '</time>' ;
+            $msg .= '<p>' . $key['content'] . '</p>';
+            $msg .= '<a class="read-less" href="index.php">Terug</a>';
+            $msg .= '</article>';
+            $msg = preg_replace("#(^|[ \n\r\t])www.([a-z\-0-9]+).([a-z]{2,4})($|[ \n\r\t])#mi", "\\1<a href=\"http://www.\\2.\\3\" target=\"_blank\">www.\\2.\\3</a>\\4", $msg);
+            $msg = preg_replace("#(^|[ \n\r\t])(((ftp://)|(http://)|(https://))([a-z0-9\-\.,\?!%\*_\#:;~\\&$@\/=\+]+))#mi", "\\1<a href=\"\\2\" target=\"_blank\">\\2</a>", $msg); 
+
+          }
         }
       }
-    }
-    
-} 
-catch (PDOException $e) 
-{
-  $msg = "Error:" . $e;
-}
-
-  $dbContent = NULL;
-
-  if(isset($msg))
+      
+  } 
+  catch (PDOException $e) 
   {
-    echo htmlspecialchars_decode($msg);
-  }   
+    $msg = "Error:" . $e;
+  }
+
+    $dbContent = NULL;
+
+    if(isset($msg))
+    {
+      echo htmlspecialchars_decode($msg);
+    }   
 }
 
 ?>

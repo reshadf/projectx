@@ -1,6 +1,6 @@
 <?php  
 session_start();
-ini_set('display_errors', 0); // 0 = uit, 1 = aan
+ini_set('display_errors', 1); // 0 = uit, 1 = aan
 error_reporting(E_ALL | E_STRICT);
 if(isset($_SESSION['username'])) {
 
@@ -112,6 +112,70 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
 		}
 	}
 
+	if(isset($_POST['articles']))
+	{
+		try 
+		{
+		  $dbUpdate = new PDO('mysql:=85.17.24.74;dbname=projectx', 'reshad', 'Playstation3');
+		  $dbUpdate->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+		    $stmtUpdate = $dbUpdate->prepare('  SELECT 
+		                                id, title, content, description, thumbnail, data
+		                            FROM  
+		                                articles
+		                        ');
+
+		    $stmtUpdate->execute();
+		    
+		    $formUpdate = '';
+		    if($stmtUpdate === false)
+		    {
+		      $formUpdate = 'error 08';
+		    }
+		    else
+		    {
+		    	$formUpdate .= '<section class="articles">';
+			    $formUpdate .= '<table>';
+		       while($row = $stmtUpdate->fetch(PDO::FETCH_ASSOC))
+			      {
+			      	$formUpdate .= '<tr>';
+			      	$formUpdate .= '<td>';
+			      	$formUpdate .= 'Datum';
+			      	$formUpdate .= '</td>';
+			      	$formUpdate .= '<td>';
+			      	$formUpdate .= 'ID';
+			      	$formUpdate .= '</td>';
+			      	$formUpdate .= '<td>';
+			      	$formUpdate .= 'Titel';
+			      	$formUpdate .= '</td>';
+			      	$formUpdate .= '</tr>';
+
+			      	$formUpdate .= '<tr>';
+			      	$formUpdate .= '<td>';
+			      	$formUpdate .= $row['data'];
+			      	$formUpdate .= '</td>';
+			      	$formUpdate .= '<td>';
+			      	$formUpdate .= $row['id'];
+			      	$formUpdate .= '</td>';
+			      	$formUpdate .= '<td>';
+			      	$formUpdate .= '<a href="?article_id=' . $row['id'] . '">' . $row['title'] . '</a>';
+			      	$formUpdate .= '</td>';
+			      	$formUpdate .= '</tr>';
+			      }
+			    $formUpdate .= '</table>';
+			    $formUpdate .= '</section>';
+
+		    }
+		    
+		} 
+		catch (PDOException $e) 
+		{
+		  $formUpdate = "Error:" . $e;
+		}
+
+		  $dbUpdate = NULL;
+	}
+
 } // end request method post
 
  	try 
@@ -182,7 +246,6 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
 	}
 
 	  $dbSet = NULL;
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -228,6 +291,63 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
   			{
   				echo $updateMsg;
   			}
+
+  			if(isset($_GET['id']))
+			{
+			  try 
+			  {
+			    $dbContent = new PDO('mysql:=85.17.24.74;dbname=projectx', 'reshad', 'Playstation3');
+			    $dbContent->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+			      $stmtContent = $dbContent->prepare('  SELECT 
+			                                                id, title, content, description, thumbnail, data
+			                                            FROM  
+			                                                articles
+			                                            WHERE 
+			                                                id = '.(int)($_GET['id']).'
+			                                        ');
+
+			      $stmtContent->execute();
+			      
+
+			      if($stmtContent === false)
+			      {
+			        $art = 'error 03';
+			      }
+			      else
+			      {
+			        $art = '';
+			        $row = $stmtContent->fetchAll(PDO::FETCH_ASSOC);
+			        {
+
+			          foreach($row as $rows => $key)
+			          {
+			            $art .= '<article class="content">';
+			            $art .= '<figure> <a href="#"><img src="img/nofoto.gif" alt="Post thumbnail" class="thumbnail alignleft" /></a> </figure>';
+			            $art .=  '<h2>' . $key['title'] . '</h2><time datetime=' . $key['data'] . '>' . $key['data'] . '</time>' ;
+			            $art .= '<p>' . $key['content'] . '</p>';
+			            $art .= '<a class="read-less" href="index.php">Terug</a>';
+			            $art .= '</article>';
+			            $art = preg_replace("#(^|[ \n\r\t])www.([a-z\-0-9]+).([a-z]{2,4})($|[ \n\r\t])#mi", "\\1<a href=\"http://www.\\2.\\3\" target=\"_blank\">www.\\2.\\3</a>\\4", $art);
+			            $art = preg_replace("#(^|[ \n\r\t])(((ftp://)|(http://)|(https://))([a-z0-9\-\.,\?!%\*_\#:;~\\&$@\/=\+]+))#mi", "\\1<a href=\"\\2\" target=\"_blank\">\\2</a>", $art); 
+
+			          }
+			        }
+			      }
+			      
+			  } 
+			  catch (PDOException $e) 
+			  {
+			    $art = "Error:" . $e;
+			  }
+
+			    $dbContent = NULL;
+
+			    if(isset($art))
+			    {
+			      echo htmlspecialchars_decode($art);
+			    }
+			}
   		?>
   </section>
 

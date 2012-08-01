@@ -28,7 +28,7 @@ function __autoload($className)
       // als file bestaat haal op anders error
       if (file_exists($file)) 
       {
-          require $file;      
+          require $file;
       }
       else 
       {

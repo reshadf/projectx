@@ -18,11 +18,11 @@ function __autoload($className)
       // alle paden samenvoegen tot waar ik zijn moet en de phpfile eraan plakken.
       $file = $base . "/lib/" . $path . '.php';       
       
-      
+      echo $file;
       // als file bestaat haal op anders error
       if (file_exists($file)) 
       {
-          require $file;      
+          require $file;
       }
       else 
       {

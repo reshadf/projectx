@@ -1,0 +1,9 @@
+<Files index.ini>
+  order allow,deny
+  deny from all
+</Files>
+
+<Files index.php?page=index.ini>
+  order allow,deny
+  deny from all
+</Files>

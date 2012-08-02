@@ -1,6 +1,6 @@
 <?php  
 session_start();
-ini_set('display_errors', 1); // 0 = uit, 1 = aan
+ini_set('display_errors', 0); // 0 = uit, 1 = aan
 error_reporting(E_ALL | E_STRICT);
 if(isset($_SESSION['username'])) {
 
@@ -12,7 +12,7 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
 	{
 		try 
 		{
-		  $dbChange = new PDO('mysql:host=localhost;dbname=projectx', 'root', 'root');
+		  $dbChange = new PDO('mysql:=85.17.24.74;dbname=projectx', 'reshad', 'Playstation3');
 		  $dbChange->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 		    $stmtUpdateIt = $dbChange->prepare('  UPDATE 
@@ -54,7 +54,7 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
 	{
 		try 
 		{
-		  $dbUpdate = new PDO('mysql:host=localhost;dbname=projectx', 'root', 'root');
+		  $dbUpdate = new PDO('mysql:=85.17.24.74;dbname=projectx', 'reshad', 'Playstation3');
 		  $dbUpdate->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 		    $stmtUpdate = $dbUpdate->prepare('  SELECT 
@@ -112,7 +112,7 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
 			{
 				try 
 				{
-				  $dbChange = new PDO('mysql:host=localhost;dbname=projectx', 'root', 'root');
+				  $dbChange = new PDO('mysql:=85.17.24.74;dbname=projectx', 'reshad', 'Playstation3');
 				  $dbChange->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 				    $stmtUpdateIt = $dbChange->prepare('  UPDATE 
@@ -158,7 +158,7 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
 	{
 		try 
 		{
-		  $dbUpdate = new PDO('mysql:host=localhost;dbname=projectx', 'root', 'root');
+		  $dbUpdate = new PDO('mysql:=85.17.24.74;dbname=projectx', 'reshad', 'Playstation3');
 		  $dbUpdate->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 		    $stmtUpdate = $dbUpdate->prepare('  SELECT 
@@ -222,7 +222,7 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
 
  	try 
 	{
-	  $dbSet = new PDO('mysql:host=localhost;dbname=projectx', 'root', 'root');
+	  $dbSet = new PDO('mysql:=85.17.24.74;dbname=projectx', 'reshad', 'Playstation3');
 	  $dbSet->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 	    $stmt = $dbSet->prepare('  SELECT 
@@ -342,7 +342,7 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
 			{
 			  try 
 			  {
-			    $dbContent = new PDO('mysql:host=localhost;dbname=projectx', 'root', 'root');
+			    $dbContent = new PDO('mysql:=85.17.24.74;dbname=projectx', 'reshad', 'Playstation3');
 			    $dbContent->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 			      $stmtContent = $dbContent->prepare('  SELECT 

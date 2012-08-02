@@ -177,7 +177,7 @@ else
 
     if(isset($msg))
     {
-      echo htmlspecialchars_decode($msg);
+      echo nl2br($msg);
     }   
 }
 

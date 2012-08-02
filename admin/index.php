@@ -40,7 +40,7 @@ function __autoload($className)
 
   	try 
 	{
-	  $db = new PDO('mysql:=85.17.24.74;dbname=projectx', 'reshad', 'Playstation3');
+	  $db = new PDO('mysql:host=localhost;dbname=projectx', 'root', 'root');
 	  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 	    $stmt = $db->prepare('  SELECT 

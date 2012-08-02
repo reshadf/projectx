@@ -7,12 +7,54 @@ if(isset($_SESSION['username'])) {
 $username = $_SESSION['username'];
 
 if($_SERVER['REQUEST_METHOD']== 'POST'){
+
+	if(isset($_POST['wijzigart']))
+	{
+		try 
+		{
+		  $dbChange = new PDO('mysql:host=localhost;dbname=projectx', 'root', 'root');
+		  $dbChange->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+		    $stmtUpdateIt = $dbChange->prepare('  UPDATE 
+						                                articles
+						                            SET  
+						                                title = :title, content = :content, description = :description
+
+						                        	WHERE 
+						                        		id = :id
+						                        ');
+
+		    $stmtUpdateIt->bindParam(':id', $_POST['id'], PDO::PARAM_INT);
+		    $stmtUpdateIt->bindParam(':title', $_POST['title'], PDO::PARAM_STR);
+		    $stmtUpdateIt->bindParam(':content', $_POST['content'], PDO::PARAM_STR);
+		    $stmtUpdateIt->bindParam(':description', $_POST['description'], PDO::PARAM_STR);
+
+		    $stmtUpdateIt->execute();
+		    
+		    
+		    if($stmtUpdateIt === false)
+		    {
+		      $updateMsg = 'error 01';
+		    }
+		    else
+		    {
+		    	$updateMsg = 'artikel gewijzigd!'; 
+		    }
+		    
+		} 
+		catch (PDOException $e) 
+		{
+		  $formUpdate = "Error:" . $e;
+		}
+
+		  $dbUpdate = NULL;	
+	}
 	
 	if(isset($_POST['personal']))
 	{
 		try 
 		{
-		  $dbUpdate = new PDO('mysql:=85.17.24.74;dbname=projectx', 'reshad', 'Playstation3');
+		  $dbUpdate = new PDO('mysql:host=localhost;dbname=projectx', 'root', 'root');
 		  $dbUpdate->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 		    $stmtUpdate = $dbUpdate->prepare('  SELECT 
@@ -70,7 +112,7 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
 			{
 				try 
 				{
-				  $dbChange = new PDO('mysql:=85.17.24.74;dbname=projectx', 'reshad', 'Playstation3');
+				  $dbChange = new PDO('mysql:host=localhost;dbname=projectx', 'root', 'root');
 				  $dbChange->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 				    $stmtUpdateIt = $dbChange->prepare('  UPDATE 
@@ -116,7 +158,7 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
 	{
 		try 
 		{
-		  $dbUpdate = new PDO('mysql:=85.17.24.74;dbname=projectx', 'reshad', 'Playstation3');
+		  $dbUpdate = new PDO('mysql:host=localhost;dbname=projectx', 'root', 'root');
 		  $dbUpdate->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 		    $stmtUpdate = $dbUpdate->prepare('  SELECT 
@@ -136,20 +178,20 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
 		    {
 		    	$formUpdate .= '<section class="articles">';
 			    $formUpdate .= '<table>';
+			    $formUpdate .= '<tr>';
+		      	$formUpdate .= '<td>';
+		      	$formUpdate .= 'Datum';
+		      	$formUpdate .= '</td>';
+		      	$formUpdate .= '<td>';
+		      	$formUpdate .= 'ID';
+		      	$formUpdate .= '</td>';
+		      	$formUpdate .= '<td>';
+		      	$formUpdate .= 'Titel';
+		      	$formUpdate .= '</td>';
+		      	$formUpdate .= '</tr>';
+
 		       while($row = $stmtUpdate->fetch(PDO::FETCH_ASSOC))
 			      {
-			      	$formUpdate .= '<tr>';
-			      	$formUpdate .= '<td>';
-			      	$formUpdate .= 'Datum';
-			      	$formUpdate .= '</td>';
-			      	$formUpdate .= '<td>';
-			      	$formUpdate .= 'ID';
-			      	$formUpdate .= '</td>';
-			      	$formUpdate .= '<td>';
-			      	$formUpdate .= 'Titel';
-			      	$formUpdate .= '</td>';
-			      	$formUpdate .= '</tr>';
-
 			      	$formUpdate .= '<tr>';
 			      	$formUpdate .= '<td>';
 			      	$formUpdate .= $row['data'];
@@ -180,7 +222,7 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
 
  	try 
 	{
-	  $dbSet = new PDO('mysql:=85.17.24.74;dbname=projectx', 'reshad', 'Playstation3');
+	  $dbSet = new PDO('mysql:host=localhost;dbname=projectx', 'root', 'root');
 	  $dbSet->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 	    $stmt = $dbSet->prepare('  SELECT 
@@ -268,17 +310,21 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
   	<?php
  	echo $msg;
 
- 	?>
+ 	if(!isset($_GET['article_id']))
+ 	{
+ 	echo	'
  	<h3>Configuration</h3>
  	<hr>
- 	<section class="managers">
- 		<form method="post">
-		 	<ul>
-		 		<li><input type="submit" name="articles" value="Manage articles"></li>
-		 		<li><input type="submit" name="personal" value="Personal"></li>
-		 	</ul>
-	 	</form>
- 	</section>
+		<section class="managers">
+	 		<form method="post">
+			 	<ul>
+			 		<li><input type="submit" name="articles" value="Manage articles" href=" "></li>
+			 		<li><input type="submit" name="personal" value="Personal" href=" "></li>
+			 	</ul>
+		 	</form>
+	 	</section>';
+ 	}
+ 	?>
   </aside>
   <section class="main" >
   		<?php
@@ -292,11 +338,11 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
   				echo $updateMsg;
   			}
 
-  			if(isset($_GET['id']))
+  			if(isset($_GET['article_id']))
 			{
 			  try 
 			  {
-			    $dbContent = new PDO('mysql:=85.17.24.74;dbname=projectx', 'reshad', 'Playstation3');
+			    $dbContent = new PDO('mysql:host=localhost;dbname=projectx', 'root', 'root');
 			    $dbContent->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 			      $stmtContent = $dbContent->prepare('  SELECT 
@@ -304,7 +350,7 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
 			                                            FROM  
 			                                                articles
 			                                            WHERE 
-			                                                id = '.(int)($_GET['id']).'
+			                                                id = '.(int)($_GET['article_id']).'
 			                                        ');
 
 			      $stmtContent->execute();
@@ -322,15 +368,18 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
 
 			          foreach($row as $rows => $key)
 			          {
-			            $art .= '<article class="content">';
-			            $art .= '<figure> <a href="#"><img src="img/nofoto.gif" alt="Post thumbnail" class="thumbnail alignleft" /></a> </figure>';
-			            $art .=  '<h2>' . $key['title'] . '</h2><time datetime=' . $key['data'] . '>' . $key['data'] . '</time>' ;
-			            $art .= '<p>' . $key['content'] . '</p>';
-			            $art .= '<a class="read-less" href="index.php">Terug</a>';
+			            $art .= '<article class="articles">';
+			            $art .= '<form method="post">';
+			            $art .= 'Geplaatst op:  <time>' . $key['data'] . '</time><br><br>';
+			            $art .= 'ID <input name="id" type="text" value="' . $key['id'] . '" readonly>';
+			            $art .= '<br><a href="admin.php">Terug</a>';
+			            $art .= '<figure> <a href="#"><img src="../img/nofoto.gif" alt="Post thumbnail" class="thumbnail" /></a> </figure>';
+			            $art .= 'Titel:  <input type="text" name="title" value="' . $key['title'] . '"<br><br><br>' ;
+			            $art .= 'Beschrijving: <br><textarea name="description">' . $key['description'] . '</textarea><br><br>';
+			            $art .= 'Content: <br><textarea name="content">' . $key['content'] . '</textarea>';
+			            $art .= '<br><input type="submit" value="wijzig" name="wijzigart">';
+			            $art .= '</form>';
 			            $art .= '</article>';
-			            $art = preg_replace("#(^|[ \n\r\t])www.([a-z\-0-9]+).([a-z]{2,4})($|[ \n\r\t])#mi", "\\1<a href=\"http://www.\\2.\\3\" target=\"_blank\">www.\\2.\\3</a>\\4", $art);
-			            $art = preg_replace("#(^|[ \n\r\t])(((ftp://)|(http://)|(https://))([a-z0-9\-\.,\?!%\*_\#:;~\\&$@\/=\+]+))#mi", "\\1<a href=\"\\2\" target=\"_blank\">\\2</a>", $art); 
-
 			          }
 			        }
 			      }

@@ -155,7 +155,7 @@ if (file_exists("index.ini") && is_array($title = parse_ini_file("index.ini", tr
   
   <script src="js/libs/modernizr-2.5.3.min.js"></script>
 
-    <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
 <link rel="stylesheet" type="text/css" href="css/cookiebar.css"/>
 <script type="text/javascript" src="http://assets.cookieconsent.silktide.com/1.0.8/plugin.min.js"></script>
 <script type="text/javascript">
@@ -165,11 +165,7 @@ cc.initialise({
     analytics: {}
   },
   settings: {
-    consenttype: "implicit",
-    bannerPosition: "top",
     tagPosition: "vertical-left",
-    hideprivacysettingstab: true,
-    refreshOnConsent: true,
     disableallsites: true
   },
   strings: {

@@ -7,13 +7,15 @@ if(isset($_SESSION['username'])) {
 
 $username = $_SESSION['username'];
 
+require 'config.php';
+
 if($_SERVER['REQUEST_METHOD']== 'POST'){
 
 	if(isset($_POST['wijzigart']))
 	{
 		try 
 		{
-		  $dbChange = new PDO('mysql:=85.17.24.74;dbname=projectx', 'reshad', 'Playstation3');
+		  $dbChange = new PDO('mysql:=$host;dbname=' . $database , $username, $password);
 		  $dbChange->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 		    $stmtUpdateIt = $dbChange->prepare('  UPDATE 
@@ -56,7 +58,7 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
 		try 
 		{
 
-		  $dbUpdate = new PDO('mysql:=85.17.24.74;dbname=projectx', 'reshad', 'Playstation3');
+		  $dbUpdate = new PDO('mysql:=$host;dbname=' . $database , $username, $password);
 
 		  $dbUpdate->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -116,7 +118,7 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
 				try 
 				{
 
-				  $dbChange = new PDO('mysql:=85.17.24.74;dbname=projectx', 'reshad', 'Playstation3');
+				  $dbChange = new PDO('mysql:=$host;dbname=' . $database , $username, $password);
 				  $dbChange->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 				    $stmtUpdateIt = $dbChange->prepare('  UPDATE 
@@ -162,7 +164,7 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
 	{
 		try 
 		{
-		  $dbUpdate = new PDO('mysql:=85.17.24.74;dbname=projectx', 'reshad', 'Playstation3');
+		  $dbUpdate = new PDO('mysql:=$host;dbname=' . $database , $username, $password);
 		  $dbUpdate->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 		    $stmtUpdate = $dbUpdate->prepare('  SELECT 
@@ -225,7 +227,7 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
 
  	try 
 	{
-	  $dbSet = new PDO('mysql:=85.17.24.74;dbname=projectx', 'reshad', 'Playstation3');
+	  $dbSet = new PDO('mysql:=$host;dbname=' . $database , $username, $password);
 	  $dbSet->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 	    $stmt = $dbSet->prepare('  SELECT 
@@ -345,7 +347,7 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
 			{
 			  try 
 			  {
-			    $dbContent = new PDO('mysql:=85.17.24.74;dbname=projectx', 'reshad', 'Playstation3');
+			    $dbContent = new PDO('mysql:=$host;dbname=' . $database , $username, $password);
 			    $dbContent->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 			      $stmtContent = $dbContent->prepare('  SELECT 

@@ -155,16 +155,22 @@ aside
 	
 }
 
-li input {
-	background-color: #fff;
-	border: none;
-}
-
-li input:hover {
-	text-decoration: underline;
-}
-
-.block input
+.thumbnail
 {
-	display: block;
+	width: 100px;
+	height: 100px;
+	border: 1px solid #000;
+	float: right;
 }
+
+table td
+{
+	padding: 10px;
+}
+
+textarea
+{
+	height: 100px;
+	width: 200px;
+}
+

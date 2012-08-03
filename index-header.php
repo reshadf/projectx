@@ -10,33 +10,8 @@ session_start();
 ini_set('display_errors', 1); // 0 = uit, 1 = aan
 error_reporting(E_ALL | E_STRICT);
 
-/*
- * AutoLoader 
- */ 
+require 'config.php';
 
-function __autoload($className) 
-  {
-    // haal de base dir op.
-      $base = dirname(__FILE__);
-      
-      // het pad ophalen
-      $path = $className;
-
-      // alle paden samenvoegen tot waar ik zijn moet en de phpfile eraan plakken.
-      $file = $base . "/lib/" . $path . '.php';       
-      
-      
-      // als file bestaat haal op anders error
-      if (file_exists($file)) 
-      {
-          require $file;      
-      }
-      else 
-      {
-          error_log('Class "' . $className . '" could not be autoloaded');
-          throw new Exception('Class "' . $className . '" could not be autoloaded from: ' . $file); 
-      }
-  }
 
 /*
  *  Menu block
@@ -68,7 +43,7 @@ if (file_exists("index.ini") && is_array($content = parse_ini_file("index.ini", 
 
 try 
 {
-  $db = new PDO('mysql:host=localhost;dbname=projectx', 'root', 'root');
+  $db = new PDO('mysql:=$host;dbname=' . $database , $username, $password);
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $stmt = $db->prepare('  SELECT 
@@ -155,7 +130,7 @@ if (file_exists("index.ini") && is_array($title = parse_ini_file("index.ini", tr
   
   <script src="js/libs/modernizr-2.5.3.min.js"></script>
 
-    <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
 <link rel="stylesheet" type="text/css" href="css/cookiebar.css"/>
 <script type="text/javascript" src="http://assets.cookieconsent.silktide.com/1.0.8/plugin.min.js"></script>
 <script type="text/javascript">
@@ -165,11 +140,7 @@ cc.initialise({
     analytics: {}
   },
   settings: {
-    consenttype: "implicit",
-    bannerPosition: "top",
     tagPosition: "vertical-left",
-    hideprivacysettingstab: true,
-    refreshOnConsent: true,
     disableallsites: true
   },
   strings: {

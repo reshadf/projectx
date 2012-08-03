@@ -21,7 +21,7 @@ function __autoload($className)
       // als file bestaat haal op anders error
       if (file_exists($file)) 
       {
-          require $file;      
+          require $file;
       }
       else 
       {
@@ -105,7 +105,7 @@ function __autoload($className)
  <body>
 <?php
 
-	$loginForm = new formhandler();
+	$loginForm = new FormHandler();
 
 	$loginForm->textField("Naam", "username", FH_STRING);
 	$loginForm->passField("Wachtwoord", "password", FH_PASSWORD);

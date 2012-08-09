@@ -490,8 +490,13 @@ input:focus,textarea:focus {
   }
 }
 
+.orange
+{
+	color: #FF8800;
+}
 
-/*===================
-Portfolio css
-====================*/
+.orange a
+{
+	color: #FF8800;
+}
 

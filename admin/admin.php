@@ -1,7 +1,7 @@
 <?php  
 session_start();
 
-ini_set('display_errors', 0); // 0 = uit, 1 = aan
+ini_set('display_errors', 1); // 0 = uit, 1 = aan
 error_reporting(E_ALL | E_STRICT);
 if(isset($_SESSION['username'])) {
 
@@ -314,7 +314,7 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
   	<hr>
   	<?php
  	echo $msg;
-
+ 	
  	if(!isset($_GET['article_id']))
  	{
  	echo	'

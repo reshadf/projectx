@@ -92,9 +92,9 @@ catch (PDOException $e)
   $db = NULL;
 ?>
 <!doctype html>
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="nl"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="nl"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="nl"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="nl"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
@@ -122,7 +122,7 @@ if (file_exists("index.ini") && is_array($title = parse_ini_file("index.ini", tr
 }
 ?>
 </title>
-  <meta name="description" content="">
+  <meta name="description" content="De persoonlijke website van Reshad Farid. Kom alles te weten over zijn programmeer skills zijn projecten en veel meer coole dingen!">
 
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="css/style.css">
@@ -137,20 +137,53 @@ if (file_exists("index.ini") && is_array($title = parse_ini_file("index.ini", tr
 // <![CDATA[
 cc.initialise({
   cookies: {
-    analytics: {}
+    analytics: {
+                title: 'Analytics',
+      description: 'Analyics is een cookie wat wij plaatsen om aan de hand van uw gedrag op onze website '+
+        ''
+            }
   },
   settings: {
+                consenttype: "explicit", /* explicit voor opt-in en "implicit voor opt-out" */
     tagPosition: "vertical-left",
-    disableallsites: true
+    refreshOnConsent: true,
+    disableallsites: true,
+    hideallsitesbutton: true,
+                bannerPosition: "top"
   },
-  strings: {
-    analyticsDefaultDescription: 'We maken gebruik van cookies om u en andere gebruikers een betere gebruikerservaring te geven.',
-    advertisingDefaultDescription: 'We maken gebruik van cookies om u en andere gebruikers een betere gebruikerservaring te geven.'
-  }
+        strings: {
+        notificationTitle: 'Om u een goede beleving van de website te geven moeten wij cookies plaatsen',
+        notificationTitleImplicit: 'Wij gebruiken cookies om u een prettig bezoek te bezorgen',
+        customCookie: 'Speciale cookies',
+        seeDetails: 'Meer informatie',
+        seeDetailsImplicit: 'Verander instellingen',
+        hideDetails: 'Verberg informatie',
+        allowCookies: 'Toestaan',
+        allowForAllSites: 'Overal Toestaan',
+        savePreference: 'Opslaan',
+        saveForAllSites: 'Overal Opslaan',
+        privacySettings: 'Cookie instellingen',
+        privacySettingsDialogTitleA: 'Cookie instellingen',
+        privacySettingsDialogTitleB: 'voor deze website',
+        privacySettingsDialogSubtitle: 'Sommige dingen op deze website hebben uw toestemming nodig om goed te werken',
+        changeForAllSitesLink: 'Verander instellingen voor alle sites',
+        preferenceUseGlobal: 'Gebruik algemene instellingen',
+        preferenceConsent: 'Toestaan',
+        preferenceDecline: 'Verbieden',
+        notUsingCookies: 'Deze website gebruikt geen cookies',
+        allSitesSettingsDialogTitleA: 'Cookie instellingen',
+        allSitesSettingsDialogTitleB: 'voor alle websites',
+        allSitesSettingsDialogSubtitle: 'Je geeft nu toestemming aan elke site met dezelfde bar.',
+        backToSiteSettings: 'Terug naar website instellingen',
+        preferenceAsk: 'Vraag het me altijd',
+        preferenceAlways: 'Altijd toestaan',
+        preferenceNever: 'Altijd verbieden',
+                        allowCookiesImplicit: 'sluiten',
+                        closeWindow: 'Sluit venster'
+      }
 });
 // ]]>
 </script>
-<!-- End Cookie Consent plugin -->
 
 
 </head>

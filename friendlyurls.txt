@@ -1,0 +1,27 @@
+Options -Multiviews
+
+RewriteEngine On
+RewriteBase /
+
+# Force search engines to use www.reshadfarid.nl
+RewriteCond %{HTTP_HOST} !^www\.reshadfarid\.nl$
+RewriteRule ^(.*) http://www.reshadfarid.nl/$1 [R=301,L]
+
+RewriteCond %{ENV:REDIRECT_STATUS} 200
+RewriteRule .* - [L]
+
+# Redirect old pages
+RewriteCond %{QUERY_STRING} ^page=main\.php$
+RewriteRule ^index\.php$ /home? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page=about\.php$
+RewriteRule ^index\.php$ /about? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page=portfolio\.php$
+RewriteRule ^index\.php$ /portfolio? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page=tips\.php$
+RewriteRule ^index\.php$ /tips-and-tricks? [R=301,L]
+
+# Specify search friendly URLs
+RewriteRule ^home$ /index.php?page=main.php [L]
+RewriteRule ^about$ /index.php?page=about.php [L]
+RewriteRule ^portfolio$ /index.php?page=portfolio.php [L]
+RewriteRule ^tips-and-tricks$ /index.php?page=tips.php [L]

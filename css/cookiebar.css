@@ -166,7 +166,7 @@ CORE STYLES
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 10pt;
+	font-size: 8pt;
 	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 	font-weight: 400;
 	line-height: 1em;
@@ -202,7 +202,7 @@ CORE STYLES
 {
 	display: block;
 	margin-top: 20px !important;
-	color: #868686 !important;
+	color: #fff !important;
 	text-decoration: none !important;
 }
 
@@ -243,7 +243,6 @@ CORE STYLES
 #cc-modal .cc-logo,
 #cc-settingsmodal .cc-logo
 {
-	background-image: url(https://s3-eu-west-1.amazonaws.com/assets.cookieconsent.silktide.com/cookie-consent-logo.png);
 	width: 142px;
 	height: 32px;
 	position: absolute;
@@ -255,446 +254,6 @@ CORE STYLES
 .cc-logo span
 {
 	display: none;
-}
-
-
-/**
-LIGHT STYLE
-*/
-
-#cc-notification.cc-light
-{
-	background: rgb(226, 226, 226) !important;
-	background-color: rgba(226, 226, 226, 0.95) !important;
-	color: #1d1d1d !important;
-}
-
-#cc-notification.cc-light #cc-notification-permissions li
-{
-	color: #1d1d1d !important;
-
-}
-
-#cc-notification.cc-light #cc-notification-permissions li strong
-{
-	color: #31a8f0 !important;
-}
-
-#cc-notification.cc-light #cc-notification-permissions li.cc-notification-permissions-inactive
-{
-	color: #AAA !important;
-}
-#cc-notification.cc-light #cc-notification-permissions li.cc-notification-permissions-inactive label
-{
-	color: #AAA !important;
-}
-
-#cc-notification.cc-light #cc-notification-permissions li.cc-notification-permissions-inactive strong
-{
-	color: #88BFEF !important;
-}
-
-#cc-notification.cc-light #cc-notification-permissions li.cc-notification-permissions-inactive a.cc-learnmore-link
-{
-	color: #AAA !important;
-}
-
-#cc-notification.cc-light a,
-#cc-notification.cc-light a:visited
-{
-	color: #31A8F0 !important;
-}
-
-#cc-notification.cc-light a:hover
-{
-	color: #257eb4 !important;
-}
-
-#cc-notification.cc-light h2,
-#cc-notification.cc-light h3,
-#cc-notification.cc-light p
-{
-	color: #1d1d1d !important;
-}
-
-#cc-notification.cc-light ul.cc-notification-buttons li a,
-#cc-notification.cc-light ul.cc-notification-buttons li a:visited
-{
-	background-color: #f1d600 !important;
-	color: #111 !important;
-}
-
-#cc-notification.cc-light ul.cc-notification-buttons li a:hover,
-#cc-notification.cc-light ul.cc-notification-buttons li a:active,
-#cc-notification.cc-light ul.cc-notification-buttons li #cc-approve-button-allsites:hover,
-#cc-notification.cc-light ul.cc-notification-buttons li #cc-approve-button-allsites:active
-{
-	background-color: #f5f5f5 !important;
-}
-
-#cc-notification.cc-light ul.cc-notification-buttons li #cc-approve-button-allsites
-{
-	background-color: #31A8F0 !important;
-}
-
-#cc-tag.cc-light a,
-#cc-tag.cc-light a:visited
-{
-	background-color: #e2e2e2 !important;
-	color: #1d1d1d !important;
-}
-
-
-#cc-modal.cc-light #cc-modal-wrapper
-{
-	background-color: #e2e2e2 !important;
-	color: #f5f5f5 !important;
-}
-
-#cc-modal.cc-light #cc-modal-wrapper a,
-#cc-modal.cc-light #cc-modal-wrapper a:visited
-{
-	color: #666666 !important;
-}
-#cc-modal.cc-light #cc-modal-wrapper a:hover
-{
-	color: #31A8F0 !important;
-}
-
-#cc-modal.cc-light #cc-modal-wrapper #cc-change-button-allsites
-{
-	background-color: #666666 !important;
-	color: #111 !important;
-}
-
-#cc-modal.cc-light #cc-modal-wrapper select
-{
-
-	color: #111 !important;
-}
-
-#cc-modal.cc-light #cc-modal-wrapper a.cc-consentchange:hover
-{
-	background-color: #31A8F0 !important;
-}
-
-#cc-modal.cc-light #cc-modal-wrapper li strong
-{
-	color: #31a8f0 !important;
-}
-
-#cc-modal.cc-light #cc-modal-wrapper li span
-{
-	color: #7A7A7A !important;
-
-}
-#cc-settingsmodal.cc-light #cc-settingsmodal-wrapper
-{
-
-	background-color: #e1e1e1 !important;
-	color: #f5f5f5 !important;
-}
-
-#cc-modal.cc-light #cc-modal-wrapper p,
-#cc-settingsmodal.cc-light #cc-settingsmodal-wrapper p
-{
-	color: #F5F5F5 !important;
-}
-
-
-#cc-modal.cc-light #cc-modal-wrapper h2,
-#cc-settingsmodal.cc-light #cc-settingsmodal-wrapper h2
-{
-	color: #1d1d1d !important;
-}
-
-#cc-modal.cc-light #cc-modal-wrapper h2 span,
-#cc-settingsmodal.cc-light #cc-settingsmodal-wrapper h2 span
-{
-	color: #7a7a7a !important;
-}
-
-#cc-settingsmodal.cc-light #cc-settingsmodal-wrapper h2 span
-{
-	color: #71f031 !important;
-}
-
-#cc-settingsmodal.cc-light #cc-settingsmodal-wrapper p.cc-subtitle,
-#cc-modal.cc-light #cc-modal-wrapper p.cc-subtitle
-{
-	color: #7a7a7a !important;
-}
-
-#cc-settingsmodal.cc-light #cc-settingsmodal-secondclosebutton a,
-#cc-settingsmodal.cc-light #cc-settingsmodal-secondclosebutton a:visited
-{
-	color: #666666 !important;
-}
-
-#cc-modal.cc-light #cc-modal-secondclosebutton a:hover,
-#cc-modal.cc-light #cc-modal-secondclosebutton a:active,
-#cc-settingsmodal.cc-light #cc-settingsmodal-secondclosebutton a:hover,
-#cc-settingsmodal.cc-light #cc-settingsmodal-secondclosebutton a:active,
-#cc-modal.cc-light #cc-modal-global a:hover,
-#cc-modal.cc-light #cc-modal-global a:active
-{
-	color:#1d1d1d  !important;
-}
-
-#cc-modal.cc-light #cc-modal-wrapper .cc-preference-importantmessage a,
-#cc-modal.cc-light #cc-modal-wrapper .cc-preference-importantmessage a:visited
-{
-
-	background-color: #f5F5F5 !important;
-	color: #111 !important;
-	box-shadow:1px 1px 2px #000;
-	-moz-box-shadow:1px 1px 2px #000;
-	-webkit-box-shadow:1px 1px 2px #000;
-	background-color: #F1D600 !important;
-
-}
-
-#cc-modal.cc-light #cc-modal-wrapper .cc-preference-importantmessage a:hover,
-#cc-modal.cc-light #cc-modal-wrapper .cc-preference-importantmessage a:active
-{
-	background-color: #0288CE !important;
-	color:#fff  !important;
-	box-shadow:1px 2px 10px #000;
-	-moz-box-shadow:1px 2px 10px #000;
-	-webkit-box-shadow:1px 2px 10px #000;
-
-}
-
-#cc-modal.cc-light #cc-modal-wrapper a.cc-learnmore-link,
-#cc-settingsmodal.cc-light #cc-settingsmodal-wrapper a.cc-learnmore-link,
-#cc-notification.cc-light a.cc-learnmore-link
-{
-	color: #666 !important;
-}
-
-/**
-MONOCHROME STYLE
-*/
-
-#cc-notification.cc-monochrome
-{
-	background: rgb(51, 51, 51) !important;
-	background-color: rgba(51, 51, 51, 0.95) !important;
-	color: #fff !important;
-}
-
-#cc-notification.cc-monochrome #cc-notification-permissions li
-{
-	color: #fff !important;
-
-}
-
-#cc-notification.cc-monochrome #cc-notification-permissions li strong
-{
-	color: #fff !important;
-}
-
-#cc-notification.cc-monochrome #cc-notification-permissions li.cc-notification-permissions-inactive
-{
-	color: #AAA !important;
-}
-#cc-notification.cc-monochrome #cc-notification-permissions li.cc-notification-permissions-inactive label
-{
-	color: #AAA !important;
-}
-
-#cc-notification.cc-monochrome #cc-notification-permissions li.cc-notification-permissions-inactive strong
-{
-	color: #bbb !important;
-}
-
-#cc-notification.cc-monochrome #cc-notification-permissions li.cc-notification-permissions-inactive a.cc-learnmore-link
-{
-	color: #AAA !important;
-}
-
-#cc-notification.cc-monochrome a,
-#cc-notification.cc-monochrome a:visited
-{
-	color: #DDD !important;
-}
-
-#cc-notification.cc-monochrome a:hover
-{
-	color: #ffffff !important;
-}
-
-#cc-notification.cc-monochrome h2,
-#cc-notification.cc-monochrome h3,
-#cc-notification.cc-monochrome p
-{
-	color: #AAA !important;
-}
-
-#cc-notification.cc-monochrome ul.cc-notification-buttons li a,
-#cc-notification.cc-monochrome ul.cc-notification-buttons li a:visited
-{
-	background-color: #ddd !important;
-	color: #111 !important;
-}
-
-#cc-notification.cc-monochrome ul.cc-notification-buttons li a:hover,
-#cc-notification.cc-monochrome ul.cc-notification-buttons li a:active,
-#cc-notification.cc-monochrome ul.cc-notification-buttons li #cc-approve-button-allsites:hover,
-#cc-notification.cc-monochrome ul.cc-notification-buttons li #cc-approve-button-allsites:active
-{
-	background-color: #fff !important;
-}
-
-#cc-notification.cc-monochrome ul.cc-notification-buttons li #cc-approve-button-allsites
-{
-	background-color: #ddd !important;
-}
-
-#cc-tag.cc-monochrome #cc-tag-button,
-#cc-tag.cc-monochrome #cc-tag-button:visited
-{
-	background-color: #333 !important;
-	color: #ddd !important;
-}
-#cc-tag.cc-monochrome #cc-tag-button:hover,
-#cc-tag.cc-monochrome #cc-tag-button:active
-{
-	border-top: 3px solid #fff !important;
-	border-right: 3px solid #fff !important;
-	border-left: 3px solid #fff !important;
-}
-#cc-settingsmodal.cc-monochrome #cc-settingsmodal-wrapper li strong,
-#cc-modal.cc-monochrome #cc-modal-wrapper li strong
-{
-	color: #FFF !important;
-}
-
-#cc-modal.cc-monochrome #cc-modal-wrapper
-{
-	background-color: #333 !important;
-	color: #f5f5f5 !important;
-}
-
-#cc-modal.cc-monochrome #cc-modal-wrapper a,
-#cc-modal.cc-monochrome #cc-modal-wrapper a:visited
-{
-	color: #666666 !important;
-}
-#cc-modal.cc-monochrome #cc-modal-wrapper a:hover
-{
-	color: #31A8F0 !important;
-}
-
-#cc-modal.cc-monochrome #cc-modal-wrapper #cc-change-button-allsites
-{
-	background-color: #666666 !important;
-	color: #111 !important;
-}
-
-#cc-modal.cc-monochrome #cc-modal-wrapper select
-{
-
-	color: #111 !important;
-}
-
-#cc-modal.cc-monochrome #cc-modal-wrapper a.cc-consentchange:hover
-{
-	background-color: #31A8F0 !important;
-}
-
-#cc-modal.cc-monochrome #cc-modal-wrapper li strong
-{
-	color: #fff !important;
-}
-
-#cc-modal.cc-monochrome #cc-modal-wrapper li span
-{
-	color: #7A7A7A !important;
-
-}
-#cc-settingsmodal.cc-monochrome #cc-settingsmodal-wrapper
-{
-
-	background-color: #333 !important;
-	color: #f5f5f5 !important;
-}
-
-#cc-modal.cc-monochrome #cc-modal-wrapper p,
-#cc-settingsmodal.cc-monochrome #cc-settingsmodal-wrapper p
-{
-	color: #F5F5F5 !important;
-}
-
-
-#cc-modal.cc-monochrome #cc-modal-wrapper h2,
-#cc-settingsmodal.cc-monochrome #cc-settingsmodal-wrapper h2
-{
-	color: #fff !important;
-}
-
-#cc-modal.cc-monochrome #cc-modal-wrapper h2 span,
-#cc-settingsmodal.cc-monochrome #cc-settingsmodal-wrapper h2 span
-{
-	color: #7a7a7a !important;
-}
-
-#cc-settingsmodal.cc-monochrome #cc-settingsmodal-wrapper h2 span
-{
-	color: #ddd !important;
-}
-
-#cc-settingsmodal.cc-monochrome #cc-settingsmodal-wrapper p.cc-subtitle,
-#cc-modal.cc-monochrome #cc-modal-wrapper p.cc-subtitle
-{
-	color: #7a7a7a !important;
-}
-
-#cc-settingsmodal.cc-monochrome #cc-settingsmodal-secondclosebutton a,
-#cc-settingsmodal.cc-monochrome #cc-settingsmodal-secondclosebutton a:visited
-{
-	color: #666666 !important;
-}
-
-#cc-modal.cc-monochrome #cc-modal-secondclosebutton a:hover,
-#cc-modal.cc-monochrome #cc-modal-secondclosebutton a:active,
-#cc-settingsmodal.cc-monochrome #cc-settingsmodal-secondclosebutton a:hover,
-#cc-settingsmodal.cc-monochrome #cc-settingsmodal-secondclosebutton a:active,
-#cc-modal.cc-monochrome #cc-modal-global a:hover,
-#cc-modal.cc-monochrome #cc-modal-global a:active
-{
-	color:#fff  !important;
-}
-
-#cc-modal.cc-monochrome #cc-modal-wrapper .cc-preference-importantmessage a,
-#cc-modal.cc-monochrome #cc-modal-wrapper .cc-preference-importantmessage a:visited
-{
-
-	background-color: #f5F5F5 !important;
-	color: #111 !important;
-	box-shadow:1px 1px 2px #000;
-	-moz-box-shadow:1px 1px 2px #000;
-	-webkit-box-shadow:1px 1px 2px #000;
-	background-color: #F1D600 !important;
-
-}
-
-#cc-modal.cc-monochrome #cc-modal-wrapper .cc-preference-importantmessage a:hover,
-#cc-modal.cc-monochrome #cc-modal-wrapper .cc-preference-importantmessage a:active
-{
-	background-color: #0288CE !important;
-	color:#fff  !important;
-	box-shadow:1px 2px 10px #000;
-	-moz-box-shadow:1px 2px 10px #000;
-	-webkit-box-shadow:1px 2px 10px #000;
-
-}
-
-#cc-modal.cc-monochrome #cc-modal-wrapper a.cc-learnmore-link,
-#cc-settingsmodal.cc-monochrome #cc-settingsmodal-wrapper a.cc-learnmore-link,
-#cc-notification.cc-monochrome a.cc-learnmore-link
-{
-	color: #ddd !important;
 }
 
 /**
@@ -741,7 +300,7 @@ DARK STYLE
 {
 	background: rgb(29, 29, 29) !important;
 	background-color: rgba(29, 29, 29, 0.95) !important;
-	color: #F5F5F5 !important;
+	color: #fff !important;
 	border-bottom: 1px dotted #CCCCCC !important;
 	font-family: 'Open Sans', Arial, Helvetica, sans-serif !important;
 	font-size: 11pt !important;
@@ -771,7 +330,7 @@ DARK STYLE
 	padding: 6px 0 0 !important;
 	list-style: none !important;
 	width: 440px !important;
-	color: #9a9a9a !important;
+	color: #fff !important;
 	-webkit-transition:color 0.2s ease-in;
 	-moz-transition:color 0.2s ease-in;
 	-o-transition:color 0.2s ease-in;
@@ -800,7 +359,7 @@ DARK STYLE
 
 #cc-notification #cc-notification-permissions li strong
 {
-	color: #31a8f0 !important;
+	color: #FF8800 !important;
 	display: block !important;
 	font-size: 14pt;
 	letter-spacing: -0.05em;
@@ -812,16 +371,16 @@ DARK STYLE
 
 #cc-notification #cc-notification-permissions li.cc-notification-permissions-inactive
 {
-	color: #666 !important;
+	color: #fff !important;
 }
 #cc-notification #cc-notification-permissions li.cc-notification-permissions-inactive label
 {
-	color: #666 !important;
+	color: #fff !important;
 }
 
 #cc-notification #cc-notification-permissions li.cc-notification-permissions-inactive strong
 {
-	color: #1D658E !important;
+	color: #fff !important;
 }
 #cc-notification #cc-notification-permissions li a.cc-learnmore-link
 {
@@ -839,14 +398,13 @@ DARK STYLE
 #cc-notification a:visited
 {
 	text-decoration: none !important;
-	color: #31A8F0 !important;
+	color: #FF8800 !important;
 	font-size:11pt;
 }
 
 #cc-notification a:hover
 {
 	text-decoration: underline !important;
-	color: #B2F7FF !important;
 }
 
 #cc-notification h2,
@@ -917,8 +475,8 @@ DARK STYLE
 	margin-bottom: 6px !important;
 	display: block;
 	padding: 8px 16px !important;
-	background-color: #f1d600 !important;
-	color: #111 !important;
+	background-color: #FF8800 !important;
+	color: #fff !important;
 	margin-right: 12px !important;
 	text-decoration: none !important;
 	font-size:12pt !important;
@@ -945,8 +503,8 @@ DARK STYLE
 #cc-notification ul.cc-notification-buttons li #cc-approve-button-allsites:active
 {
 	text-decoration: none !important;
-	background-color: #f5f5f5 !important;
-
+	color: #FF8800 !important;
+	background-color: #fff !important;
 	box-shadow:1px 2px 10px #000;
 	-moz-box-shadow:1px 2px 10px #000;
 	-webkit-box-shadow:1px 2px 10px #000;
@@ -955,7 +513,7 @@ DARK STYLE
 
 #cc-notification ul.cc-notification-buttons li #cc-approve-button-allsites
 {
-	background-color: #31A8F0 !important;
+	background-color: #FF8800 !important;
 }
 
 #cc-tag
@@ -980,7 +538,7 @@ DARK STYLE
 	/*background-image: url(http://assets.cookieconsent.silktide.com/cookie-consent-box.png);*/
 	background-repeat: no-repeat;
 	background-position: 6px 7px;
-	color: #F5F5F5 !important;
+	color: #FF8800 !important;
 	padding: 8px 12px 8px 12px !important;
 	text-decoration: none !important;
 	display:block;
@@ -1050,9 +608,9 @@ DARK STYLE
 #cc-tag a:hover,
 #cc-tag a:active
 {
-	border-top: 3px solid #F1D600 !important;
-	border-right: 3px solid #F1D600 !important;
-	border-left: 3px solid #F1D600 !important;
+	border-top: 3px solid #FF8800 !important;
+	border-right: 3px solid #FF8800 !important;
+	border-left: 3px solid #FF8800 !important;
 
 	box-shadow:2px 2px 7px #000;
 	-moz-box-shadow:2px 2px 7px #000;
@@ -1188,7 +746,7 @@ DARK STYLE
 	width: 480px !important;
 	float: left !important;
 	display: block !important;
-	color: #31a8f0 !important;
+	color: #FF8800 !important;
 	font-size: 16pt;
 	font-weight: 400 !important;
 }
@@ -1302,7 +860,7 @@ DARK STYLE
 	margin: 0 57px !important;
 	font-size: 24pt !important;
 	width: 712px !important;
-	color: #FFF !important;
+	color: #FF8800 !important;
 	font-weight: 400;
 }
 

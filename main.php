@@ -23,7 +23,7 @@ if(!isset($_GET['id']))
             $mailErrors[] = 'vul een email in s.v.p';
           }
 
-          if(filter_var($_POST['email'],FILTER_VALIDATE_EMAIL) === false)
+          if(filter_var($_POST['email'],FILTER_VALIDATE_EMAIL, FILTER_SANITIZE_EMAIL) === false)
           {
              $mailErrors[] = 'Email is niet geldig';
           }

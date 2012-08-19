@@ -7,3 +7,7 @@
   order allow,deny
   deny from all
 </Files>
+
+RewriteEngine On
+rewritecond %{http_host} ^reshadfarid.nl
+rewriteRule ^(.*) http://www.reshadfarid.nl/$1 [R=301,L]

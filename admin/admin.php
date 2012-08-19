@@ -314,7 +314,7 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
   	<hr>
   	<?php
  	echo $msg;
-
+ 	
  	if(!isset($_GET['article_id']))
  	{
  	echo	'

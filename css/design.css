@@ -508,7 +508,7 @@ input:focus,textarea:focus {
 
 .ff-container{
 	width: 564px;
-	margin: 10px auto 30px auto;
+	margin: 0px auto 30px auto;
 }
 .ff-container label{
 	font-family: 'Helvetica', helvetica;

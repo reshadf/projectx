@@ -4,7 +4,7 @@
  * Loader
  */
 
-function __autoload($className) 
+function my_autoloader($className) 
 {
 // haal de base dir op.
   $base = dirname(__FILE__);
@@ -26,4 +26,7 @@ function __autoload($className)
       throw new Exception('Class "' . $className . '" could not be autoloaded from: ' . $file); 
   }
 }
+
+spl_autoload_register('my_autoloader');
+
 ?>

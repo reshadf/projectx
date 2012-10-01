@@ -15,13 +15,13 @@
 		<div class="clr"></div>
 		
 		<ul class="ff-items">
-			<li class="ff-item-type-2">
-				<a href="#">
-					<span>Coming soon</span>
-					<img src="img/portfolio.jpg" />
+			<li class="ff-item-type-1">
+				<a href="http://www.featherdown.com" target="_blank">
+					<span>Feather Down Farms</span>
+					<img src="projects/featherdown/featherdown-logo.png" />
 				</a>
 			</li>
-			<li class="ff-item-type-1">
+			<li class="ff-item-type-2">
 				<a href="#">
 					<span>Coming soon</span>
 					<img src="img/portfolio.jpg" />

@@ -7,7 +7,7 @@ session_start();
 /*
  * Error reportin 1 is aan 0 is uit
  */
-ini_set('display_errors', 1); // 0 = uit, 1 = aan
+ini_set('display_errors', 1); 
 error_reporting(E_ALL | E_STRICT);
 
 require 'config.php';

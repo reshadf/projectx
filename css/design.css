@@ -625,3 +625,12 @@ input:focus,textarea:focus {
 	display:none;
 }
 
+
+
+/* canvas style */
+
+#chelseaLogo {
+	border: #fff solid 2px;
+	background-color: #000;
+}
+

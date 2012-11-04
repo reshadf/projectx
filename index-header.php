@@ -12,31 +12,6 @@ error_reporting(E_ALL | E_STRICT);
 
 require 'config.php';
 
-
-/*
- *  Menu block
- */
-    $menu = '';
-if (file_exists("index.ini") && is_array($content = parse_ini_file("index.ini", true)))
-{
-    if (array_key_exists("navigation", $content))
-    {
-        foreach ($content["navigation"] as $basename => $title)
-        {       
-            if(isset($_GET['page']) and $_GET['page'] == $basename)
-
-            {
-                $class = 'current';
-            }
-            else
-            {
-                $class = '';
-            }
-                $menu .= '<li><a class="' . $class . '" href="index.php?page=' . $basename . '">' . $title . '</a></li>';
-        }
-    }
-}
-
   /*
    * get Content blocks
    */

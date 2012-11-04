@@ -14,6 +14,7 @@
   <script type="text/plain" class="cc-onconsent-analytics">
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-30524183-1']);
+  _gaq.push(['_setDomainName', 'reshadfarid.nl']);
   _gaq.push(['_trackPageview']);
 
   (function() {

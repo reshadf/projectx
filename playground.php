@@ -1,4 +1,5 @@
 <section class="main">
+
 <canvas id="chelseaLogo" width="400" height="400">  
 <b>This browser does not support HTML5 Canvas!</b>  
 </canvas>
@@ -63,7 +64,7 @@ CanvasContext.font = 'bold 40pt impact';
 CanvasContext.fillStyle = '#fff';
 CanvasContext.strokeStyle = '#E0C91B';
 CanvasContext.lineWidth = 2;
-drawTextAlongArc(CanvasContext, "CHELSEA", 200, 193, 125, Math.PI*3/5, true);
+drawTextAlongArc(CanvasContext, "Chelsea", 200, 193, 125, Math.PI*3/5, true);
     
 CanvasContext.font = 'bold 20pt impact';
 drawTextAlongArc(CanvasContext, "FOOTBALL CLUB", 200, 215, 150, Math.PI*3/5, false);

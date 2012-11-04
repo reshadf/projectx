@@ -180,5 +180,4 @@ else
       echo nl2br($msg);
     }   
 }
-
 ?>

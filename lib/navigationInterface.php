@@ -1,8 +1,8 @@
 <?php
 interface navigationInterface {
 	
-	public function setMenuItem($items);
-	public function getMenuItem($menu);
+	public function getName();
+	public function getClass();
 	public function display();
 
 }

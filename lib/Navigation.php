@@ -3,47 +3,32 @@ class Navigation implements navigationInterface{
 
     public $menu = null;
     public $name = null;
-    public $klasse = null;
+    public $items = null;
 
-    public function __construct($name, $klasse) {
+    public function __construct($name) {
 
         $this->name = $name;
-        $this->klasse = $klasse;
 
+    }
+
+    public function addChild(NavigationItem $item)
+    {
+        $this->items[] = $item;
     }
 
     public function getName() {
         return $this->name;
     }
 
-    public function getClass() {
-        return $this->klasse;
-    }
-
-    public function setMenuItem($items) {
-
-        $this->menuItem = $items;
-    }
-
-    public function getMenuItem($menu) {
-        return $menu;
-    }
-
     public function display() {
 
         $menu = '<nav class="' . $this->getName() . '"><ul>';
-        if(is_array($this->menuItem))
-        {
-        foreach($this->menuItem as $val)
-        {
-        $menu .= '<li><a class="' . $this->getClass() . '" href="index.php?page=' . $this->getMenuItem($val) . '.php">' . $this->getMenuItem($val) . '</a></li>';
-        }
-        }
-        else{
-            $menu .= '<li><a class="' . $this->getClass() . '" href="index.php?page=' . $this->getMenuItem($this->menuItem) . '.php">' . $this->getMenuItem($this->menuItem) . '</a></li>';
+        
+        foreach ($this->items as $item) {
+            
+           $menu.= $item->display();
 
         }
-
 
         $menu .= '</ul></nav>';
 

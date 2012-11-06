@@ -4,12 +4,15 @@
     <div id="webtitle"> <a href="index.php"><h1><strong>Reshad</strong> Farid</h1></a> </div>
 
 <?php
-$menu = new Navigation("navigation", "mainmenu");
-
-$menu_items = array("home", "about", "playground");
-$menu->setMenuItem($menu_items);
-
-echo $menu->display();
+   $menu = new Navigation("navigation");
+   $menu_items = array("home", "about", "playground");
+   foreach($menu_items as $item) 
+   { 
+   $items = new NavigationItem();
+   $items->setMenuItem($item);
+   $menu->addChild($items);
+    }
+  echo $menu->display();
 
 ?>
     

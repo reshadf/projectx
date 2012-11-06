@@ -2,35 +2,37 @@
 class NavigationItem implements NavigationItemInterface {
 	
 	public $menu = null;
-
-	public function __construct() {
-
-	}
+    public $menuItem = null;
 
     public function setMenuItem($items) {
 
         $this->menuItem = $items;
     }
 
-    public function getMenuItem($menu) {
-        return $menu;
+    public function getMenuItem() {
+        return $this->menuItem;
+    }
+
+    public function getClass() {
+
+        if(isset($_GET['page']) and $_GET['page'] == $this->getMenuItem() . '.php')
+
+        {
+            $class = 'current';
+        }
+        else
+        {
+            $class = '';
+        }
+
+        return $class;
     }
 
     public function display() {
 
-    	if(is_array($this->menuItem))
-        {
-        foreach($this->menuItem as $val)
-        {
-        $menu .= '<li><a class="' . $this->getClass() . '" href="index.php?page=' . $this->getMenuItem($val) . '.php">' . $this->getMenuItem($val) . '</a></li>';
-        }
-        }
-        else{
-            $menu .= '<li><a class="' . $this->getClass() . '" href="index.php?page=' . $this->getMenuItem($this->menuItem) . '.php">' . $this->getMenuItem($this->menuItem) . '</a></li>';
-
-        }
-
-        return $menu;
+        
+        return '<li><a class="' . $this->getClass() . '" href="index.php?page=' . $this->getMenuItem() . '.php">' . $this->getMenuItem() . '</a></li>';
+        
     }
 
 }
